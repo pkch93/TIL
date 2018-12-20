@@ -39,3 +39,12 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
     - pandas groupby
 
 [학습노트](2018/December/20181220.md)
+
+### 21일 금요일 (Friday)
+
+- SSAFY
+
+- Spring Restful API 만들기
+
+- 데이터 사이언스 by python
+    - pandas (다양한 종류의 데이터 handling)
