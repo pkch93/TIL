@@ -20,3 +20,16 @@
 [SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL)
 
 - Spring Restful API 만들기
+
+    HAL (Hypertext Application Language) / [참고](http://stateless.co/hal_specification.html)
+
+HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format이다.
+
+### 20일 목요일 (Thursday)
+
+- SSAFY
+
+1. Flask request / redirect
+
+- Spring Restful API 만들기
+
