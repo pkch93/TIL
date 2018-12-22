@@ -17,7 +17,7 @@
 
 1. Flask로 웹 서버 개발하는 방법
 
-[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/1219)
+[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/2018/December/1219)
 
 - Spring Restful API 만들기
 
@@ -31,7 +31,7 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 
 1. Flask request / redirect
 
-[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/1220)
+[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/2018/December/1220)
 
 - Spring Restful API 만들기
 
@@ -44,7 +44,21 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 
 - SSAFY
 
+[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/2018/December/1221)
+
 - Spring Restful API 만들기
 
 - 데이터 사이언스 by python
     - pandas (다양한 종류의 데이터 handling)
+
+### 22일 토요일 (Saturday)
+
+- Spring Restful API 만들기
+
+- Spring Security와 JWT 조합해보기
+
+- 데이터 사이언스 by python
+    - pandas
+        1. pivot table / crosstab
+        2. merg & concat
+        3. DB connection & persistance
