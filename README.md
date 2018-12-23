@@ -53,12 +53,22 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 
 ### 22일 토요일 (Saturday)
 
-- Spring Restful API 만들기
+- Spring Restful API 만들기 (O)
 
-- Spring Security와 JWT 조합해보기
+- Spring Security와 JWT 조합해보기 (->)
 
-- 데이터 사이언스 by python
+- 데이터 사이언스 by python (O)
     - pandas
         1. pivot table / crosstab
         2. merg & concat
         3. DB connection & persistance
+
+### 23일 일요일 (Sunday)
+
+- Spring Restful API 만들기
+    - Spring HATEAOS
+
+- Spirng Security와 JWT 토큰 인증 적용해보기
+
+- 데이터 사이언스 by python
+    - numpy / pandas 복습
