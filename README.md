@@ -75,6 +75,7 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 - Spirng Security와 JWT 토큰 인증 적용해보기
 
 - 데이터 사이언스 by python
-    - numpy / pandas 복습
+    - pandas 복습
+    - matplotlib
 
 [학습노트](2018/December/20181223.md)
