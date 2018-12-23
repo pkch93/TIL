@@ -51,6 +51,8 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 - 데이터 사이언스 by python
     - pandas (다양한 종류의 데이터 handling)
 
+[학습노트](2018/December/20181221.md)
+
 ### 22일 토요일 (Saturday)
 
 - Spring Restful API 만들기 (O)
@@ -63,6 +65,8 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
         2. merg & concat
         3. DB connection & persistance
 
+[학습노트](2018/December/20181222.md)
+
 ### 23일 일요일 (Sunday)
 
 - Spring Restful API 만들기
@@ -72,3 +76,5 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 
 - 데이터 사이언스 by python
     - numpy / pandas 복습
+
+[학습노트](2018/December/20181223.md)
