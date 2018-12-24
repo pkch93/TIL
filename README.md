@@ -79,3 +79,17 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
     - matplotlib
 
 [학습노트](2018/December/20181223.md)
+
+### 24일 월요일 (Monday)
+
+- Spring Restful API 만들기
+    - 로직 완성 및 인증
+
+- Spring Security & OAuth2
+
+- 데이터 사이언스 by python
+    - data handling
+
+- Node.js & Express.js & MongoDB
+
+[학습노트](2018/December/20181224.md)
