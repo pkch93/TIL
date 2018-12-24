@@ -83,9 +83,11 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 ### 24일 월요일 (Monday)
 
 - Spring Restful API 만들기
-    - 로직 완성 및 인증
 
 - Spring Security & OAuth2
+    authorization_code 방식으로 OAuth2를 적용하는 것에 대해 공부가 더 필요해보인다.
+
+    특히 web front 서버에서 oauth 방식으로 구글, 페이스북 등의 로그인을 할 때 어떻게 해야할 지 감이 오지않아 추가적인 공부가 필요
 
 - 데이터 사이언스 by python
     - data handling
