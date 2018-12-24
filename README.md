@@ -90,6 +90,4 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 - 데이터 사이언스 by python
     - data handling
 
-- Node.js & Express.js & MongoDB
-
 [학습노트](2018/December/20181224.md)
