@@ -93,3 +93,12 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
     - data handling
 
 [학습노트](2018/December/20181224.md)
+
+### 25일 화요일 (Tuesday)
+
+- Card 공유 사이트 (toy project)
+
+    Python / Flask를 활용한 toy project
+
+[CardShare](https://github.com/pkch93/cardshare)
+
