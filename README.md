@@ -102,3 +102,48 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 
 [CardShare](https://github.com/pkch93/cardshare)
 
+### 26일 수요일 (Wendesday)
+
+- SSAFY
+
+[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/2018/December/1226)
+
+### 31일 월요일 (Monday)
+
+25일부터 31일 간은 cardshare 개발을 함
+
+[cardshare 홈페이지](http://cardshare.space) / [cardshare github](https://github.com/pkch93/cardshare)
+
+개발 후기
+
+1. flask
+
+    - sqlalchemy
+
+    - blueprint
+
+2. AWS
+
+    - S3
+
+    - Cors 권한
+
+    - 정책 설정
+
+3. heroku
+
+    - deploy
+
+    - Procfile
+
+    - postgresql
+
+4. cropper.js
+
+5. Cross-browsing
+
+    - safari
+        
+        -webkit-transform: rotateY(-180deg);
+
+        ~~위 css 속성이 왜 먹는지 아직도 이해가 안된다...~~
