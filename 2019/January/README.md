@@ -1,18 +1,3 @@
-# Today I Learned
-
-오늘 내가 배우고 익힌 것들
-
-## 2018년 12월 (December 2018)
-
-***목표***
-
-1. Spring으로 Restful API 서버 만들기
-    - [백기선 님의 스프링 기반 REST API 개발](https://www.inflearn.com/course/spring_rest-api/)
-2. Node.js && Express.js && MongoDB
-3. Numpy && Pandas & matplotlib
-
-[12월 학습 요약 보러가기](2018/December)
-
 ## 2019년 1월 (January 2019)
 
 ***목표***
@@ -45,4 +30,8 @@
 >
 > Algorithm 문제 1문제씩 풀기
 
-[1월 학습 요약 보러가기](2019/January)
+### 2019 01.01 Tuesday (1월 1일 수요일)
+
+1. N Tech Service 자기소개서 작성
+
+2. 티스토리 블로그에 2018년 회고 / 2019년 목표 기입
