@@ -11,7 +11,7 @@
 2. Node.js && Express.js && MongoDB
 3. Numpy && Pandas & matplotlib
 
-[12월 학습 요약 보러가기](2018/December)
+[2018년 12월 학습 요약 보러가기](2018/December)
 
 ## 2019년 1월 (January 2019)
 
@@ -45,4 +45,4 @@
 >
 > Algorithm 문제 1문제씩 풀기
 
-[1월 학습 요약 보러가기](2019/January)
+[2019년 1월 학습 요약 보러가기](2019/January)
