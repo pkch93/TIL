@@ -30,8 +30,21 @@
 >
 > Algorithm 문제 1문제씩 풀기
 
-### 2019 01.01 Tuesday (1월 1일 수요일)
+### 2019 01.01 Tuesday (1월 1일 화요일)
 
 1. N Tech Service 자기소개서 작성
 
 2. 티스토리 블로그에 2018년 회고 / 2019년 목표 기입
+
+### 2019 01.02 Wendesday (1월 2일 수요일)
+
+1. Spring Restful API (To-Do list)
+    
+    - 전체적인 구조 설계하기
+
+2. Tistory 블로그
+
+    - flatinum 테마 적용
+    - PL 포스팅 (Java, Python, Node.js)
+
+[2일 수요일 새롭게 안 것들](Day1.md)
