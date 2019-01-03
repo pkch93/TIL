@@ -1,5 +1,13 @@
 ## 2019년 1월 (January 2019)
 
+> 월별 README.md에는 월간 / 주간 / 일간 목표를 기입하고
+>
+> 각 요일에 대해 학습 노트 링크를 첨부
+>
+> 각 요일에 공부한 내용은 해당 md 파일에서 볼 수 있다.
+>
+> 추후 TIL은 github page (포트폴리오 사이트)에 포스팅할 예정
+
 ***목표***
 
 1. 티스토리 포스팅으로 공부한 내용 복습하기
@@ -48,3 +56,23 @@
     - PL 포스팅 (Java, Python, Node.js)
 
 [2일 수요일 새롭게 안 것들](Day1.md)
+
+### 2019 01.03 Thursday (1월 3일 목요일)
+
+1. Spring Restful API (To-Do list)
+
+    - 설계 바탕으로 Entity 생성 및 Test 코드 작성
+
+2. Node.js
+
+    - Node.js의 전반적인 개요
+    - 자주 사용하는 Node 모듈
+    - http 모듈로 웹 서버 생성 및 라우팅 구현
+
+3. Tistory 블로그
+
+    - PL 포스팅
+
+        - Java / Node.js 기초 개요 작성
+        - python 배운 부분까지 포스팅하기
+
