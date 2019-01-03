@@ -129,3 +129,73 @@ Node가 브라우저에서 작동하는 Client-Side javascript와 다른 점은 
 > 
 > ECMA Script(ES6)에서 import / export로 모듈을 지원해준다. 다만, 브라우저에는 구현되지 않아서 사용할 수 없었다. 하지만 크롬 60 버전부터 브라우저에서도 모듈을 사용할 수 있게 되었다. (점차 많은 브라우저에서도 사용할 수 있을거라 기대)
 
+Node.js에서 모듈은 `모듈이 될 파일`과 `모듈을 사용할 파일`이 필요하다.
+
+이때 사용하게 되는 키워드는 `module.exports`와 `exports`이다.
+
+module.exports와 exports의 관계는 단순하다. exports가 module.exports를 call by reference로 참조하고 있다. 아래는 그 관계를 코드로 나타낸 예시이다.
+
+```javascript
+var module = {
+    exports: {}
+};
+var exports = module.exports;
+
+return module.exports;
+```
+
+따라서, exports에 값을 추가하면 결국 module.exports에도 값이 추가가 되는 것이다. 이때 최종적으로 return되는 값은 module.exports이다.
+
+> 모듈이 될 파일은 결국 `module.exports`로 모듈을 다른 파일로 내보낼 수 있다.
+
+```javascript
+// sum.js
+
+module.exports = function (a, b) {
+    return a + b;
+};
+```
+
+위 sum.js는 두 개의 인자를 받아 두 인자의 합을 반환하는 함수를 모듈로 반환한다.
+
+모듈을 사용하는 파일에서는 `require(path: string)` 함수를 사용하여 모듈을 불러올 수 있다.
+
+```javascript
+// index.js
+
+var sum = require("./sum"); // sum.js의 모듈을 가져온다.
+sum(1,2); // return 3
+```
+
+이 때, node에서는 모듈을 불러올 뗴 같은 경로에 있는 모듈이라도 `sum`이 아닌 `./sum`으로 불러줘야한다.
+
+이 때, 확장자`.js`를 생략할 수 있는데 이 경우 node.js는 모듈로딩을 다음과 같이 진행한다.
+
+1. 먼저, 해당 경로에 `sum.js` 파일을 찾는다.
+2. 만약 sum.js가 없다면 해당 경로에 `sum`이라는 이름의 `폴더`를 찾아 폴더 안에 `index.js`를 실행한다.
+
+> ※ 참고! ES6의 모듈 시스템
+>
+> node.js의 require은 import, exports는 export로 사용가능하다.
+>
+> 이때 ES6의 export는 그냥 `export`와 `export default`로 구분할 수 있다.
+>
+> export는 module 파일의 일부분을 모듈화 하겠다는 의미이다.
+>
+> 여기에 default를 붙이면 기본적으로 import 했을때 얻어지는 모듈을 정의할 수 있다. ES6에서는 이 default export를 `_`로 표현한다.
+
+```javascript
+// sum.js
+
+export default function sun(a, b){
+    return a + b;
+};
+
+// index.js
+import _ from "./sum"
+```
+
+위와 같이 ES6의 모듈 시스템을 적용할 수 있다.
+
+위 ES6의 모듈 시스템을 Node.js 9버전부터 사용할 수 있다. 다만, 파일의 확장자가 `.mjs`여야하고 실행시 `node --experimental-modules [파일명]`과 같은 특별한 옵션을 붙여줘야한다.
+
