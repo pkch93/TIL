@@ -252,3 +252,238 @@ querystring 모듈에서는 parse(str: string[, sep: string [, eq: string [, opt
   > ※ 이하 옵션은 parse와 동일하다.
 
 5. crypto 모듈
+
+다양한 방식의 암호화를 도와주는 모듈, 특히 회원가입 과정에서 사용자의 비밀번호를 암호화하는데 많이 쓰인다.
+
+```javascript
+const crypto = require("crypto");
+```
+
+위와 같은 방식으로 `crypto` 모듈을 가져올 수 있다.
+
+- 단방향 암호화
+
+ 비밀번호의 경우 주로 단방향 암호화를 사용한다. 단방향 암호화는 복호화 할 수 없는 암호화 방식을 뜻한다. 즉, 암호화하면 원래의 문자열을 찾을 수 없다는 것을 의미한다.
+
+ 단방향 암호화 알고리즘은 주로 해쉬 기법을 이용한다.
+
+ > 해쉬 기법이란 어떠한 문자열을 고정된 길이의 다른 문자열로 바꾸는 방식이다.
+
+ ```javascript
+ const crypto = require("crypto");
+ 
+ const password = "1234";
+ encodedPw = crypto.createHash("sha512").update(password).digest("base64");
+ // return 1ARVn2Auq2/WAqx2gNrL+q3RNjAzXpUfCXrzkA6d4Xa22yhRLy4AC50E+6UTPoscbo31nbOoq51gvkuXzJ6B2w== 
+ ```
+
+ 위와 같이 단방향 암호화를 할 수 있다.
+
+ - createHash(algorithm: string) : 사용할 해쉬 알고리즘을 지정하는 메서드. `md5`, `sha1`, `sha256`, `sha512` 등의 알고리즘을 사용할 수 있다. 단, `md5`와 `sha1`은 취약점이 발견되어 사용을 자제하는 것이 좋다.
+
+ - update(str: string) : 암호화할 문자열을 인자로 넣어준다. 위 예제에서는 `password`가 인자로 들어가 암호화 되었다.
+
+ - digest(encoding: string) : 인코딩할 알고리즘을 넣어준다. `base64`, `hex`, `latin1`이 주로 사용되는데 `base64`가 결과 문자열이 짧아 애용된다.
+
+ 현재는 주로 `pbkdf2`, `bcrypt`, `scrypt` 알고리즘으로 암호화한다.
+
+ > ※ pbkdf2 해쉬 알고리즘
+ >
+ > Node의 crypto에서는 `pbkdf2` 알고리즘을 지원한다.
+ >
+ > `pbkdf2`는 기존의 문자열에 `salt`라는 문자열을 붙인 후 해시 알고리즘을 반복하여 적용하는 기법이다.
+
+ ```javascript
+ const crypto = require("crypto");
+
+ const password = "1234";
+ crypto.randomBytes(64, (err, buf) => {
+     const salt = buf.toString('base64');
+     console.log(salt); // DTkDelJT5+Uc6NZRqujxZBP2otoagbzsU+gnPZvUwTZPlhZmxVpOgvJuowzBdxKUo76FyoKv/badeDQmJmU0fQ==
+     crypto.pbkdf2(password, salt, 100000, 64, 'sha512', (err, key) => {
+         console.log(key.toString('base64'));
+         // OXjdxEkRQN0rd1TXeVgyYAvUzaWxswiGwooIM4UM1t10mq37omhabBbQ0f6SOpi2WUDT+aJgQVosqm3fdv1lvA==
+     });
+ });
+ ```
+
+ > crypto.pdkdf2(password: string, salt: string, repeat: integer, bytes: integer, algorithm: string, callback: function)
+
+ 위 예시에서는 randomBytes 메서드를 통해 64bytes의 문자열을 만들었다. 이 문자열이 salt가 되었고 이를 활용하여 crypto의 pbkdf2 메서드로 암호화하였다.
+
+- 양방향 암호화
+
+ 양방향 암호화는 단방향과는 달리 암호호한 값을 원래의 값으로 복구시킬 수 있다. 이때 `키`가 중요한 역할을 한다.
+
+ ```javascript
+ const crypto = require('crypto');
+ const key = '키';
+ const cipher = crypto.createCipher('aes-256-cbc', key);
+ let result = cipher.update('문장', 'utf8', 'base64');
+ result += cipher.final('base64');
+ 
+ const decipher = crypto.createDecipher('aes-256-cbc', key);
+ let result2 = decipher.update(result, 'base64', 'utf8');
+ result2 += decipher.final('utf8');
+ ```
+ 
+ 암호화는 `createCipher`로 복호화는 `createDecipher` 메서드로 각각의 객체를 만든다.
+
+ 암호화, 복호화 모두 `update()` 메서드를 통해 실행할 수 있으며 `final()` 메서드로 결과물을 얻을 수 있다.
+
+이외에도 다양한 암호화를 crypto가 지원해준다.
+
+[crypto 공식문서 참고](https://nodejs.org/dist/latest-v10.x/docs/api/crypto.html)
+
+- fs 모듈
+
+    `fs` 모듈은 파일시스템에 접근하기 위한 모듈이다. 즉, 파일을 생성 / 삭제 / 읽기 / 쓰기를 지원해주는 모듈이 바로 `fs` 모듈이다. `fs` 모듈을 통해 차후 `http` 모듈과 함께 라우팅을 적용하여 요청에 맞는 페이지를 사용자에게 보여줄 수 있다.
+
+    ```javascript
+    const fs = require('fs');
+    ```
+    위와 같은 방법으로 `fs` 모듈을 받을 수 있다.
+
+    - readFile(filename: string, callback: function) : 파일을 비동기적으로 불러오는 메서드
+    - readFileSync(filename: string) : 파일을 동기적으로 불러오는 메서드
+    - writeFile(filename: string, data, callback: function) : 파일을 비동기적으로 쓰는 메서드
+    - writeFileSync(filename: string, data) : 파일을 동기적으로 쓰는 메서드
+
+    단, `Sync`가 붙은 메서드는 잘 사용하지 않는다. 이는 Node.js가 싱글스레드로 동작하기 때문에 만약에 수백, 수천개의 파일 요청이 들어온 경우 앞서 들어온 요청을 처리할 때까지 아무런 작업을 할 수 없기 때문에 성능상의 문제가 발생할 수 있기 때문이다.
+
+### Node.js의 이벤트
+
+Node.js는 이벤트 기반 방식으로 동작하는 실행환경이다. 따라서, Node.js에서 이벤트를 다루는 것은 중요하다.
+
+이벤트는 `events` 모듈의 `EventEmitter` 생성자를 통해 이벤트 생성 객체를 받아와서 등록할 수 있다.
+
+```javascript
+const EventEmitter = require('events');
+```
+
+`events`도 내장 모듈이기 때문에 위와 같이 받아올 수 있다.
+
+이벤트를 등록하기 위해서는 먼저 EventEmitter 객체를 만들어야한다.
+
+```javascript
+const EventEmitter = require('events');
+
+const event = new EventEmitter();
+```
+위와 같이 event 변수에 EventEmitter 객체를 만들어야 비로소 이벤트를 등록할 수 있다.
+
+ - 이벤트 관리를 위한 주요 메서드
+
+    - on(eventName: string, callback: function) : 이벤트 이름과 이벤트 발생 시 콜백을 연결해준다.
+    - addListener(eventName: string, callback: function) : on과 똑같이 이벤트 리스닝 메서드
+    - emit(eventName: string): eventName에 해당하는 이벤트를 호출하는 메서드, 등록한 event의 콜백이 실행된다.
+    - once(eventName: string, callback: function) : 한 번만 실행되는 이벤트를 등록하는 메서드
+
+    > once는 실행하는 메서드가 아닌 등록하는 메서드이다! 따라서, emit을 통해 실행이 한번만 된다는 의미이다.
+
+    - removeAllListeners(eventName: string) : 이벤트에 연결된 모든 이벤트 리스너를 제거하는 메서드
+    - removeListener(eventName: string, listner: function) : 이벤트에 연결된 리스너를 하나씩 제거하는 메서드, listener와 동일한 콜백을 가진 이벤트를 `listener array`에서 지운다.
+    - off(eventName: string, callback: function): Node v10부터 새로 추가된 메서드, removeListener와 같은 기능을 한다.
+    - listenerCount(eventName: string): 해당 이벤트에 대해 리스너가 몇 개 추가됐는지 알려주는 메서드
+
+```javascript
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+myEmitter.on('event', () => {
+  console.log('an event occurred!');
+});
+myEmitter.emit('event'); // an event occurred!
+```
+
+### Node.js http 모듈
+
+`http` 모듈은 Node에서 웹서버를 다루는 모듈이다. http 모듈을 통해 웹서버를 생성하고 실행할 수 있다.
+
+```javascript
+const http = require('http');
+// http 모듈 가져오기
+const server = http.createServer((req, res) => {
+    res.end("hello world!");
+});
+// 서버 생성, 응답으로 hello world!를 준다.
+server.listen(3000, (err) => {
+    if (err) console.error("server cause error at starting");
+    console.log('server on');
+});
+// 서버실행시 오류가 없다면 server on이 콘솔에 찍힌다.
+```
+
+위와 같이 http 서버를 실행할 수 있다.
+
+위와 같은 서버에도 이벤트 리스너를 등록할 수 있다. 미리 등록된 http 이벤트도 있으며 아래 공식문서에서 확인할 수 있다.
+
+[참고 Node.js http 공식문서](https://nodejs.org/dist/latest-v10.x/docs/api/http.html)
+
+위에서는 그냥 text를 응답에 실어 보냈지만 파일자체를 응답으로 띄울 수 있다.
+
+```javascript
+const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((req, res) => {
+    fs.readFile("./templates/index.html", (err, data) => {
+        if (err) throw err;
+        else res.end(data);
+    });
+});
+
+server.listen(3000, (err) => {
+    if (err) console.error("server cause error at starting");
+    console.log('server on');
+});
+```
+
+위와 같이 fs 모듈과 함께 응답을 파일 자체로 띄울 수 있다.
+
+- 쿠키와 세션
+
+쿠키는 요청과 응답의 헤더`header`에 저장된다. 쿠키는 다음과 같은 방식으로 저장할 수 있다.
+
+```javascript
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {
+        'Set-Cookie': 'username=pkch'
+    });
+    fs.readFile("templates/index.html", (err, data) => {
+        if (err) throw err;
+        else res.end(data);
+    });
+});
+```
+위 예시처럼 응답 헤더를 작성하는 writeHead 메서드를 사용하여 쿠키를 생성할 수 있다.
+
+> res.writeHead(statusCode: integer, header: object)
+>
+> 첫 번째인자로는 상태코드, 두 번째인자로는 헤더에 설정할 정보를 객체형태로 담는다.
+
+그렇게 만들어진 쿠키는 응답으로 사용자에게 전달된다. 다음 요청부터는 쿠키가 헤더에 들어있는채로 서버에 요청을 보내며 서버에서는 `req.headers.cookie` 속성으로 쿠키를 참조할 수 있다.
+
+위 쿠키는 단순히 username 정보만 담은 쿠키이다. 쿠키 설정시에는 내용 뿐 아니라 다양한 옵션을 줄 수 있다.
+
+ - cookie 옵션
+
+  - Expires=datetime: 만료기한, 이 기한이 지나면 쿠키는 제거, 기본값은 클라이언트가 종료될 때까지
+  - Max-age=seconds: Expires와 비슷하지만 Expires는 날짜를 입력하는 대신 Max-age는 초단위로 입력할 수 있다. Expires에 우선한다.
+  - Domains=domainName: 쿠키가 전송될 도메인을 지정할 수 있다. 기본값은 현재 도메인이다.
+  - Path=URL: 쿠키가 전송될 URL을 특정할 수 있다. 기본값은 `/`이고 이 경우는 모든 URL에서 쿠키전송이 가능하다.
+  - Secure: `https`일 경우에만 쿠키 전송
+  - HttpOnly: 설정시 자바스크립트에서 쿠키에 접근할 수 없다. (쿠키조작방지를 위함)
+  
+단, cookie는 client가 직접 저장하기 때문에 보안에 취약할 수 있다. 따라서 중요한 정보는 가급적 cookie에 넣지 않는 것이 좋다.
+
+cookie와 더불어 로그인 처리를 위한 도구가 있다. `session`이 바로 그 대상이다.
+
+session은 cookie와 다르게 서버에서 정보를 가지고 있으며 client의 브라우저가 꺼지기 전까지 유효하다.
+
+server에서 `session`이라는 객체를 만들어 `session`을 구현할 수 있다.
+
+- http 웹 서버 라우팅
+
