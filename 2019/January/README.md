@@ -76,3 +76,36 @@
         - Java / Node.js 기초 개요 작성
         - python 배운 부분까지 포스팅하기
 
+[3일 목요일 새롭게 안 것들](Day2.md)
+
+### 2019 01.04 Friday (1월 4일 금요일)
+
+1. Node.js
+
+    - Node.js 내장객체
+
+[4일 목요일 새롭게 안 것들](Day3.md)
+
+### 2019 01.05 Saturday (1월 5일 토요일)
+
+1. Node.js
+
+    - Node.js 내장모듈
+        - os
+        - path
+        - url
+        - querystring
+        - crypto
+        - fs
+    - Node.js 이벤트
+    - http 모듈로 웹서버 만들기
+    - 라우팅 적용
+
+2. 온코더 공식 코딩테스트 (1400 ~ 1700)
+
+3. Spring Restful API
+
+    - lombok 주의점 살펴보기 / 프로젝트 수정
+    - 로직 구성 및 구현 / 테스트
+
+[5일 금요일 새롭게 안 것들](Day4.md)
