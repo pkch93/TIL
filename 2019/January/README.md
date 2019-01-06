@@ -108,4 +108,25 @@
     - Node.js 지금까지 배운 것들
     - python 지금까지 배운 것들
 
-[5일 금요일 새롭게 안 것들](Day4.md)
+[5일 토요일 새롭게 안 것들](Day4.md)
+
+### 2019 01.06 Sunday (1월 6일 일요일)
+
+> 1월 6일부터 Day.md 파일에 명언 / 힘이 되는 한마디 추가
+
+1. Node.js
+
+    - express.js
+    - sequelize.js로 MySQL 다루기
+
+2. Spring Restful API (To-Do List)
+
+    - lombok 주의점 학습 및 프로젝트 적용
+    - 비즈니스 로직 적용 및 테스트
+
+3. Tistory 기술블로그에 글쓰기
+    - Java 개요 / 동작 원리 / 설치 방법 / IDE
+    - Node.js 의 기능 / 내장객체 / 내장모듈 / http 웹 서버
+    - python 기본 개념들 (변수, 자료형, 조건문, 반복문, 함수)
+
+[6일 일요일 새롭게 안 것들](Day5.md)
