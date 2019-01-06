@@ -102,7 +102,169 @@ express.js는 http 모듈의 요청 / 응답 객체에 기능을 추가하여 �
 
  ![express-generator 프로젝트 구조](images/express-generator.PNG)
  
+ `express-generator`에서 어플리케이션을 구동하는 핵심적인 파일은 `app.js`이다.
+
+ ```javascript
+ var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+var app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
+ ```
+
+ 위는 `express-generator`로 생성한 프로젝트의 `app.js` 파일이다.
+ 위 코드에서 `app.set()`을 통해 `express` 어플리케이션이 동작하는데 필요한 설정 정보를 등록하고 있다.
+ 
+ > app.set(key: string, value: ?)
+ >
+ > app.set 메서드는 `key:value` 형태로 개발자가 원하는 value를 애플리케이션에 등록하는데 사용한다. 단, 일부 `key`는 어플리케이션에 필요한 설정 정보를 다루는데 사용된다.
+ >
+ > 이렇게 등록한 값은 app.get(key: string)으로 가져올 수 있다.
+
+ ```javascript
+ app.set('title', 'My Site');
+ app.get('title'); // "My Site"
+ ```
+ 이 중에서도 `env`, `views`, `view engine`등은 어플리케이션 필요한 설정 정보를 다루는데 사용된다.
+
+ ```javascript
+ app.set('views', path.join(__dirname, 'views')); // 어플리케이션의 view를 제공하기 위해 폴더 이름이나 폴더 배열을 setting하는 부분 (key는 views)
+ app.set('view engine', 'ejs'); // 템플릿 엔진을 설정하는 부분 (key는 view engine)
+ ```
+ [더 많은 정보 참고](https://expressjs.com/ko/4x/api.html#app.set)
+
+ 그리고 `app.use()`를 통해 수많은 미들웨어를 등록하고 있다.
+
+ > ## 미들웨어?
+ >
+ > Node.js에서 요청과 응답 사이의 주기에서 그 다음의 미들웨어 함수를 엑세스하는 권한을 갖는 함수이다.
+ >
+ > 미들웨어는 다음과 같이 수행할 수 있다.
+ >
+ > - 모든 코드 실행
+ > - 요청 및 응답에 대한 작업 수행
+ > - 요청-응답 주기 종료
+ > - 스택 내부에 다음 미들 미들웨어 호출
+ >
+ > 미들웨어는 요청-응답 주기 동안 선언한 순서대로 미들웨어가 실행된다.
+ >
+ > 따라서, 실행하기 위해 꼭 선언해야하는 미들웨어가 있다면 해당 미들웨어의 앞에 선언해주어야 제대로 동작할 수 있다.
+ >
+ > 현재의 미들웨어 함수가 요청-응답 주기를 종료하지 않는다면 반드시 next()를 호출하여 그 다음 미들웨어 함수를 불러줘야한다. 그렇지 않으면 요청이 정지되어 방치된다.
+
+ 위 `app.js` 에서는 다양한 미들웨어를 사용하고 있다.
+
+ ```javascript
+  var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+ 
+ // ...
+
+ app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+ ```
+
+ 위와 같이 `express`에 내장된 미들웨어 (ex. `unlencoded`, `json`, `static`)를 등록하고 있고 외장 모듈인 `morgan`과 `cookie-parser`를 가져와 미들웨어로 등록해주고 있다.
+ 
+ 또한, Router 미들웨어를 만들어 `app`의 라우팅을 모듈화하고 있다. (라우팅은 아래에서 더 다룰 예정)
+
+ > express 내장 미들웨어
+ >
+ > - unlencoded (~4.16.0)
+ >  
+ >    `body-parser`를 기반으로 인코딩되지 않은 요청 정보를 인코딩 하는 미들웨어
+ >
+ >    [unlencoded 참고](https://expressjs.com/ko/4x/api.html#express.urlencoded) 
+ >
+ > - json (~4.16.0)
+ >
+ >    마찬가지로 `body-parser`를 활용하여 JSON으로 들어오는 요청을 파싱하는 미들웨어
+ >
+ > [json 참고](https://expressjs.com/ko/4x/api.html#express.json)
+ >
+ > - static
+ >
+ >    `server-static`을 기반으로 정적 파일을 제공하도록 도와주는 미들웨어
+ >
+ > [static 참고](https://expressjs.com/ko/4x/api.html#express.static)
+ >
+ > ※ Router도 있지만 아래에서 다름
+
  express-generator 구조를 보면 특이한 폴더와 파일이 있다.
+ 
+ 바로 `./bin/www`파일이다.
+
+ `express 3`에서는 필요한 미들웨어를 처음 세팅하는데 `app.configure()`이나 `app.use()`를 사용했다.
+
+ 하지만 `express 4`에서부터 독립적으로 관리하기 위하여 `static`을 제외한 모든 미들웨어들이 `app.js`에서 제거되었고 제거 될 예정이다. 따라서, 처음 어플리케이션이 시작할 때 설정을 해주기 위해 `./bin/www`를 이용하여 정의한다.
+
+ > `./bin/www`은 http 모듈에 express를 연결하고 포트를 지정하는 역할을 한다.
+
+ [./bin/www 참고](https://stackoverflow.com/questions/23169941/what-does-bin-www-do-in-express-4-x)
 
  - 라우팅
 
@@ -298,3 +460,58 @@ express.js는 http 모듈의 요청 / 응답 객체에 기능을 추가하여 �
 
  [express 공식문서 참고](http://expressjs.com/ko/guide/routing.html)
 
+### - Sequelize.js
+
+`Sequelize.js`는 `Node.js`에서 `ORM`을 지원해주는 라이브러리이다.
+
+```
+npm install --save sequelize
+
+# And one of the following:
+npm install --save pg pg-hstore // postgresql
+npm install --save mysql2 // mysql
+npm install --save sqlite3 // sqlite3
+npm install --save tedious // MSSQL
+```
+
+위와 같이 `sequelize`와 원하는 db를 연결하기 위한 의존성을 추가하면 준비는 완료됐다.
+
+ - DB 연결하기
+
+ Sequelize는 초기 생성시 커넥션 풀을 설정한다.
+
+ > 커넥션 풀 설정시 유의사항
+ >
+ > single process의 경우는 `database`당 하나의 `instance`가 생성되는 것이 가장 이상적이다. (이 경우 커넥션 풀은 `pool`에 설정한 갯수만큼 생성)
+ >
+ > multiple processes의 경우는 전체 프로세스 instance가 커넥션 풀을 비율대로 나눠가진다. 만약, 3개의 프로세스가 있고 90개로 커넥션 풀의 크기를 정하면 프로세스들은 각각 30개씩 커넥션 풀을 가지게된다.
+
+ ```javascript
+ const Sequelize = require('sequelize');
+ const sequelize = new Sequelize('database', 'username', 'password', {
+  host: 'localhost',
+  dialect: 'mysql'|'sqlite'|'postgres'|'mssql',
+  operatorsAliases: false,
+
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  },
+
+  // SQLite only
+  storage: 'path/to/database.sqlite'
+ });
+
+ // Or you can simply use a connection uri
+ const sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname');
+ ```
+ 
+ 위와 같이 `sequelize`로 DB 설정을 할 수 있다.
+
+ 이후 위에서 정의한 `sequelize.sync()`로 DB와 연동할 수 있다.
+ 
+ [Sequelize 공식 문서 getting-started 참고](http://docs.sequelizejs.com/manual/installation/getting-started.html)
+
+ 
