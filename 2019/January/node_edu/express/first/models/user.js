@@ -6,11 +6,11 @@ module.exports = (sequelize, DataTypes) => {
             unique: true
         },
         age: {
-            type: DataTypes.INTEGER.UNSINGED,
+            type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
         created_at: {
-            type: DateTypes.Date,
+            type: DataTypes.DATE,
             defaultValue: DataTypes.NOW
         }
     }, {
