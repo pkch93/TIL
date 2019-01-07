@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             unique: true
         },
+        password: {
+            type: DataTypes.STRING(20),
+            allowNull: false,
+        },
         age: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false

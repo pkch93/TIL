@@ -1,10 +1,6 @@
 # 2019 01.04 Friday
 
-# 1. SSAFY
-
-[SSAFY에서 배운 것](https://github.com/chulsea/TIL/blob/master/2019/January/days/0104.md)
-
-# 2. Node.js
+# 1. Node.js
 
 ## Node.js 내장객체
 

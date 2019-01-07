@@ -7,6 +7,10 @@ const sequelize = new Sequelize('TEST', 'root', '1234', {
     host: 'localhost',
     port: '3306',
     dialect: 'mysql',
+    define: {
+        charset: 'utf8',
+        collate: 'utf8_general_ci'
+    }
 });
 
 db.sequelize = sequelize;

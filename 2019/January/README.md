@@ -130,3 +130,16 @@
     - python 기본 개념들 (변수, 자료형, 조건문, 반복문, 함수)
 
 [6일 일요일 새롭게 안 것들](Day5.md)
+
+### 2019 01.07 Monday (1월 7일 월요일)
+
+1. Node.js
+
+    - ejs 템플릿 사용하기
+    - Node.js 및 Sequelize 실습
+
+        - data 만들어보기
+        - query 해보기
+        - Sequelize.js에서 제공해주는 각종 where 비교 연산자 적용해보기
+
+[7일 월요일 새롭게 안 것들](Day6.md)

@@ -3,17 +3,10 @@
 ***목표***
 
 1. Spring으로 Restful API 서버 만들기
-    - [백기선 님의 스프링 기반 REST API 개발](https://www.inflearn.com/course/spring_rest-api/)
 2. Node.js && Express.js && MongoDB
 3. Numpy && Pandas & matplotlib
 
 ### 19일 수요일 (Wendesday)
-
-- SSAFY
-
-1. Flask로 웹 서버 개발하는 방법
-
-[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/2018/December/1219)
 
 - Spring Restful API 만들기
 
@@ -23,12 +16,6 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 
 ### 20일 목요일 (Thursday)
 
-- SSAFY
-
-1. Flask request / redirect
-
-[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/2018/December/1220)
-
 - Spring Restful API 만들기
 
 - 데이터 사이언스 by python
@@ -37,10 +24,6 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
 [학습노트](20181220.md)
 
 ### 21일 금요일 (Friday)
-
-- SSAFY
-
-[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/2018/December/1221)
 
 - Spring Restful API 만들기
 
@@ -97,12 +80,6 @@ HAL은 API의 resource 사이에 hyperlink를 제공해주는 간단한 format�
     Python / Flask를 활용한 toy project
 
 [CardShare](https://github.com/pkch93/cardshare)
-
-### 26일 수요일 (Wendesday)
-
-- SSAFY
-
-[SSAFY에서 배운 것 보러가기](https://github.com/chulsea/TIL/tree/master/2018/December/1226)
 
 ### 31일 월요일 (Monday)
 
