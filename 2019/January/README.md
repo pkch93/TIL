@@ -143,3 +143,11 @@
         - Sequelize.js에서 제공해주는 각종 where 비교 연산자 적용해보기
 
 [7일 월요일 새롭게 안 것들](Day6.md)
+
+### 2019 01.08 Tuesday (1월 8일 화요일)
+
+1. Node.js
+
+    - passport.js
+
+[8일 화요일 새롭게 안 것들](Day7.md)
