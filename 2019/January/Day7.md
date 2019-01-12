@@ -64,5 +64,3 @@ host=github.com
     만약 `passport.authenticate()`로 인증이 실패한다면 `401 Unauthorized` 상태 코드가 반환된다. 이렇게 되면 후에 나오는 추가적인 router는 불리지 않는다.
 
     인증이 성공한 경우는 다음 route handler가 불러지며 `req.user` 변수로 인증된 user 정보를 가져올 수 있다.
-
-    Redirect

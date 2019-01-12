@@ -32,7 +32,7 @@
 
     - To-Do List API 서버 만들기
     - 추후 Android와 React To-Do List에서 위 서버를 활용해서 데이터를 받아올 예정
-    - 코딩 야학 5기 스케줄과 함께 만들기 목표 https://yah.ac/yahac3
+    - ~~코딩 야학 5기 스케줄과 함께 만들기 목표 https://yah.ac/yahac3~~
 
 3. Python Data Science
 
