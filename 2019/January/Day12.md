@@ -121,3 +121,29 @@
             몇번째 페이지인지 알려주는 속성
         3. sort
             어떤 속성을 기준으로 정렬하는 속성
+
+    - java 8 localdatetime 계산하기
+
+        계산을 너무 복잡하게 생각한 것 같다.
+        `Localdatetime` 객체에서 제공하는 `plusDays`, `plusWeeks`, `plusMonths` 등을 사용하면 편하게 날짜 계산을 할 수 있다.
+
+        ```java
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime afterOneDay = now.plusDays(1);
+        System.out.println(now); // 2019-01-13T15:14:57.980592
+        System.out.println(afterOneDay.format(formatter)); // 2019-01-14 15:14:57
+        LocalDateTime afterAWeek = now.plusWeeks(1);
+        System.out.println(afterAWeek.format(formatter)); // 2019-01-20 15:14:57
+        LocalDateTime beforeTwoWeek = now.minusWeeks(2);
+        System.out.println(beforeTwoWeek.format(formatter)); // 2018-12-30 15:19:42
+        ```
+
+        위와 같이 현재시간`now`를 기준으로 하루, 일주일 차이의 날짜를 계산할 수 있다.
+
+        또한 formatter를 이용하여 기본으로 출력되는 값을 다른 방식으로 바꿀 수 있다.
+
+        아래 캡쳐는 공식문서에서 제공하는 formatter 방식이다.
+
+        ![formatter 문자열 목록](images/localdatetime.PNG)
+        
