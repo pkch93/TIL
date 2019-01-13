@@ -156,4 +156,17 @@
 
 1. Spring Restful API
 
+    - `@OneToMany` / `@ManyToMany` 등 매핑시 Collection의 인터페이스 변수를 사용할 것
+    - `@RequestBody`에 대한 것
+    - Spring HATEOAS
+
 [12일 토요일 새롭게 안 것들](Day11.md)
+
+### 2019 01.13 Sunday (1월 13일 일요일)
+
+1. Spring Restful API
+
+    - ModelMapper
+    - Spring Data Vaildation
+    - Spring Docs
+    
