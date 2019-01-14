@@ -169,4 +169,11 @@
     - ModelMapper
     - Spring Data Vaildation
     - Spring Docs
-    
+
+[13일 일요일 새롭게 안 것들](Day12.md)
+
+### 2019 01.14 Monday (1월 14일 월요일)
+
+1. Jekyll 포트폴리오 사이트 리뉴얼
+
+    - index 페이지 레이아웃 수정
