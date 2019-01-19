@@ -213,12 +213,8 @@
 
         단, `목표, 신조, 기술 요약, 연락정보`만 덩그러니 놓기 보다는 `timeline`을 배치하여 나의 이력을 보여주는 것도 좋을 것이라 판단.
 
-2. Spring Restful API (To-Do List)
+2. Tistory 블로그 글 쓰기
 
-    - 비즈니스 로직 완성
-    - Spring Docs로 문서 작성
-
-3. Tistory 블로그 글 쓰기
-
+    - Java 기초 `자료형`
     - Node.js `http 모듈 및 http 서버 생성하기`
-    - python 기초
+    - python 기초 `~클래스와 상속`
