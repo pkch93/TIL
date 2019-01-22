@@ -218,3 +218,18 @@
     - Java 기초 `자료형`
     - Node.js `http 모듈 및 http 서버 생성하기`
     - python 기초 `~클래스와 상속`
+
+### 2019 01.23 Wendesday (1월 23일 수요일)
+
+1. node.js & express.js
+
+    - 주요 모듈 다시 복습
+      - path
+      - url
+      - crypto
+
+    - express.js Restful API 만들기
+      - passport-jwt로 인증 구현
+      - react.js와 연동
+
+2. 
