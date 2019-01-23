@@ -88,7 +88,7 @@ const path = require("path");
 
     > pathObject에 `dir`이 있다면 `root`는 무시된다.
     >
-    > pathObject에 `name`이 있다면 `ext`와 `name`은 무시된다.
+    > pathObject에 `base`이 있다면 `ext`와 `name`은 무시된다.
 
     ```javascript
     path.format({
@@ -139,7 +139,7 @@ const path = require("path");
 
 url처리에는 크게 2가지 방식이 있다. Node v7에서 추가된 WHATWG 방식과 기본의 URL 방식이 있다.
 
-[Day3.md에 URL 관련 학습내용](Day3.md)겨
+[Day3.md에 URL 관련 학습내용](Day3.md)
 
 ```javascript
 const url = require('url');

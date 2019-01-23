@@ -231,5 +231,9 @@
     - express.js Restful API 만들기
       - passport-jwt로 인증 구현
       - react.js와 연동
+  
+2. Tistory 블로그 글 쓰기
 
-2. 
+    - Java 기초 `자료형`
+    - Node.js `http 모듈 및 http 서버 생성하기`
+    - python 기초 `~클래스와 상속`
