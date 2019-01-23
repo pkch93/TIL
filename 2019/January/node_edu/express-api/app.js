@@ -12,6 +12,7 @@ const port = process.env.PORT || 3000;
 app.use(logger("dev"));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.disable("etag");
 
 const apiRoutes = require("./routes/api");
 app.use("/api", apiRoutes);
