@@ -5,14 +5,7 @@ const logger = require("morgan");
 
 const app = express();
 const passport = require("passport");
-
-passport.serializeUser = (user, done) => {
-    done(null, user);
-};
-
-passport.deserializeUser = (user, done) => {
-    done(null, user);
-};
+const passportConfig = require("./middlewares/passport");
 
 app.set("dummy", __dirname + "/model/dummy");
 const mode = process.env.NODE_MODE || "development";
@@ -22,6 +15,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(passport.initialize());
+passportConfig();
 app.disable("etag");
 
 const apiRoutes = require("./routes/api");
