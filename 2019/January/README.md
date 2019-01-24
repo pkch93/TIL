@@ -232,8 +232,14 @@
       - passport-jwt로 인증 구현
       - react.js와 연동
   
-2. Tistory 블로그 글 쓰기
+[23일 수요일 새롭게 안 것들](Day22.md)
 
-    - Java 기초 `자료형`
-    - Node.js `http 모듈 및 http 서버 생성하기`
-    - python 기초 `~클래스와 상속`
+### 2019 01.24 Thursday (1월 24일 목요일)
+
+1. express.js api 서버 개발
+
+    - 로그인 / 회원가입 (passport 사용 & jwt 발급)
+    - mysql & sequelize 연동
+    - api 서버를 사용할 view 만들기 (react.js)
+
+[24일 목요일 새롭게 안 것들](Day23.md)

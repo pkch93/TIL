@@ -4,6 +4,15 @@ const express = require("express");
 const logger = require("morgan");
 
 const app = express();
+const passport = require("passport");
+
+passport.serializeUser = (user, done) => {
+    done(null, user);
+};
+
+passport.deserializeUser = (user, done) => {
+    done(null, user);
+};
 
 app.set("dummy", __dirname + "/model/dummy");
 const mode = process.env.NODE_MODE || "development";
@@ -12,6 +21,7 @@ const port = process.env.PORT || 3000;
 app.use(logger("dev"));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(passport.initialize());
 app.disable("etag");
 
 const apiRoutes = require("./routes/api");
