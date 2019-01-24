@@ -2,10 +2,12 @@ require("dotenv").config();
 const httpErrors = require("http-errors");
 const express = require("express");
 const logger = require("morgan");
+const session = require("express-session");
 
 const app = express();
 const passport = require("passport");
-const passportConfig = require("./middlewares/passport");
+const passportConfig = require("./config/passport");
+passportConfig(passport);
 
 app.set("dummy", __dirname + "/model/dummy");
 const mode = process.env.NODE_MODE || "development";
@@ -14,8 +16,17 @@ const port = process.env.PORT || 3000;
 app.use(logger("dev"));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(session({
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.COOKIE_SECRET,
+    cookie: {
+        httpOnly: true,
+        secure: false
+    }
+}));
 app.use(passport.initialize());
-passportConfig();
+app.use(passport.session());
 app.disable("etag");
 
 const apiRoutes = require("./routes/api");
