@@ -1,14 +1,15 @@
 const jwt = require("jsonwebtoken");
 
-const users = require("../../../model/dummy/user.json")["users"];
+const users = require("../../model/dummy/user.json")["users"];
 
 const findUser = ({username, password}) => {
     for (let user of users){
+        console.log(user);
         if (user.username === username && user.password === password){
             return user;
         }
-        return null;
     }
+    return null;
 };
 
 exports.login = (req, res) => {
@@ -20,14 +21,16 @@ exports.login = (req, res) => {
         const token = jwt.sign({
             username
         }, process.env.JWT_SECRET, {
-            expiresIn: "1m",
+            expiresIn: "24h",
             issuer: "test"
         });
-        return res.json({
-            code: 200,
-            message: "login successed",
-            token
-        });
+        res.status(200)
+            .set("authorization", `bearer ${token}`)
+            .json({
+                code: 200,
+                message: "login successed",
+                token
+            });
     }
 };
 

@@ -30,7 +30,11 @@ app.use(passport.session());
 app.disable("etag");
 
 const apiRoutes = require("./routes/api");
-app.use("/api", apiRoutes);
+const authRoutes = require("./routes/auth");
+const middlewares = require("./middlewares");
+
+app.use("/api", middlewares.verifyToken, apiRoutes);
+app.use("/auth", authRoutes);
 
 app.get("/", (req, res) => {
     res.json({
