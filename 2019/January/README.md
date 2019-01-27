@@ -236,10 +236,22 @@
 
 ### 2019 01.24 Thursday (1월 24일 목요일)
 
-1. express.js api 서버 개발
+1. express.js api 서버 개발 (->)
 
     - 로그인 / 회원가입 (passport 사용 & jwt 발급)
     - mysql & sequelize 연동
     - api 서버를 사용할 view 만들기 (react.js)
 
 [24일 목요일 새롭게 안 것들](Day23.md)
+
+### 2019 01.26 Saturday (1월 26일 토요일)
+
+1. express.js api 서버 개발
+
+    - 로그인 / 회원가입 (passport 사용 & jwt 발급)
+    - mysql & sequelize 연동
+    - api 서버를 사용할 view 만들기 (react.js)
+
+2. Programmers 실전 모의 코딩테스트 (13:00 ~ 15:30)
+
+    - 실력검증..!

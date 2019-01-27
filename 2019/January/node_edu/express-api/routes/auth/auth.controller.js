@@ -4,7 +4,6 @@ const users = require("../../model/dummy/user.json")["users"];
 
 const findUser = ({username, password}) => {
     for (let user of users){
-        console.log(user);
         if (user.username === username && user.password === password){
             return user;
         }
@@ -19,13 +18,14 @@ exports.login = (req, res) => {
         res.status(403).json({ error: "403 Authentication Denied", message: "invaild input" });
     } else {
         const token = jwt.sign({
-            username
+            username,
+            password
         }, process.env.JWT_SECRET, {
             expiresIn: "24h",
             issuer: "test"
         });
         res.status(200)
-            .set("authorization", `bearer ${token}`)
+            .set("Authorization", `Bearer ${token}`)
             .json({
                 code: 200,
                 message: "login successed",

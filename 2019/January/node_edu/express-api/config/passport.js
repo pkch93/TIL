@@ -1,4 +1,3 @@
-const passport = require("passport");
 const JwtStrategy = require("passport-jwt").Strategy,
     ExtractJwt = require("passport-jwt").ExtractJwt;
 
@@ -12,8 +11,9 @@ opts.secretOrKey = jwtSecret;
 opts.issuer = "pkch9377@gmail.com";
 opts.audience = "everybody";
 
-module.exports = () => {
+module.exports = passport => {
     passport.use("jwt", new JwtStrategy(opts, (jwtPayload, done) => {
+        console.log(jwtPayload);
         const {username, password} = jwtPayload;
         for(let user in users){
             if (user.username === username && user.password === password){
