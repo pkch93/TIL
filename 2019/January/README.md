@@ -264,3 +264,8 @@
 
     - 프로젝트 내용 추가
     - skills 이미지 추가
+
+2. Tistory 블로그 글쓰기
+
+    - `python` / `java`
+ 
