@@ -258,7 +258,7 @@
 
 [26일 목요일 새롭게 안 것들](Day25.md)
 
-### 2019 01.27 Sunday (1월 27일 일요일)
+### 2019 01.28 Monday (1월 28일 일요일)
 
 1. Jekyll Portfolio page
 
@@ -267,5 +267,18 @@
 
 2. Tistory 블로그 글쓰기
 
-    - `python` / `java`
- 
+    - `python`
+
+### 2019 01.29 Tuesday (1월 29일 화요일)
+
+1. Jekyll Portfolio page
+
+    - 프로젝트 내용 추가
+
+2. Tistory 블로그 글스기
+
+    - `python`
+
+3. 다빈치 메이커톤 프로젝트 리펙토링
+
+    - `express.js` 프로젝트 세팅
