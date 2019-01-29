@@ -282,3 +282,17 @@
 3. 다빈치 메이커톤 프로젝트 리펙토링
 
     - `express.js` 프로젝트 세팅
+
+### 2019 01.30 Wendesday (1월 30일 수요일)
+
+1. Jekyll Portfolio page
+
+    - 프로젝트 내용 추가
+
+2. Django Basic
+ 
+3. 다빈치 메이커톤 프로젝트 리펙토링
+
+    - `express.js` 프로젝트 세팅
+
+[30일 수요일 새롭게 안 것들](Day29.md)
