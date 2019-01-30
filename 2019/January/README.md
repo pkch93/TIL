@@ -274,11 +274,3 @@
 1. Jekyll Portfolio page
 
     - 프로젝트 내용 추가
-
-2. Tistory 블로그 글스기
-
-    - `python`
-
-3. 다빈치 메이커톤 프로젝트 리펙토링
-
-    - `express.js` 프로젝트 세팅
