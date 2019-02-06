@@ -123,3 +123,20 @@
         자료형, 프로토타입
 
 3. *YouthProject 프로젝트 세팅* (`->`)
+
+## 2019 02.07 Thursday
+
+1. Tistory 블로그
+
+    - Java 포스팅
+        자바 개요, JVM이란, 자바 설치와 IDE
+    - Python 포스팅
+        자료형, if문, for문, while문
+    - Javascript 포스팅
+        자료형, 프로토타입
+
+2. YouthProject
+
+    - routes 정의
+    - model 생성 (MongoDB & mongoose)
+    
