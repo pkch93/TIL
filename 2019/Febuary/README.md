@@ -108,12 +108,12 @@
 
 ## 2019 02.06 Wendesday
 
-1. Jekyll Portfolio Page
+1. Jekyll Portfolio Page (`O`)
 
     - index 페이지 스타일링 완료
     - 프로젝트 포스팅
 
-2. Tistory 블로그
+2. Tistory 블로그 (`X`)
 
     - Java 포스팅
         자바 개요, JVM이란, 자바 설치와 IDE
@@ -122,5 +122,4 @@
     - Javascript 포스팅
         자료형, 프로토타입
 
-3. *YouthProject 프로젝트 세팅*
-
+3. *YouthProject 프로젝트 세팅* (`->`)
