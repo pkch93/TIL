@@ -123,3 +123,15 @@
         자료형, 프로토타입
 
 3. *YouthProject 프로젝트 세팅* (`->`)
+
+## 2019 02.07 Thursday
+
+1. Ubuntu
+
+    - 학습 환경 설치
+
+        vmware / ubuntu
+
+2. python data scraping
+
+    - urllib를 활용한 scraping
