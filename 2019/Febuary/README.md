@@ -126,12 +126,29 @@
 
 ## 2019 02.07 Thursday
 
-1. Ubuntu
+1. Ubuntu (`O`)
 
     - 학습 환경 설치
 
         vmware / ubuntu
 
-2. python data scraping
+2. python data scraping (`O`)
 
     - urllib를 활용한 scraping
+
+[7일 목요일 학습노트](Day07.md)
+
+## 2019 02.10 Sunday
+
+1. Ubuntu
+
+    - dpkg와 apt-get
+    - 찾기 명령(find, which, whereis, locate)과 예약 명령(cron, at)
+
+2. YouthProject
+
+    - express.js 인증 로직 구현
+    - mongoose 활용한 Schema 작성
+    - 라우트 설정 완료
+
+[10일 일요일 학습노트](Day10.md)
