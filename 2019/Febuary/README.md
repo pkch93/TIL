@@ -126,22 +126,6 @@
 
 ## 2019 02.07 Thursday
 
-<<<<<<< HEAD
-1. Tistory 블로그
-
-    - Java 포스팅
-        자바 개요, JVM이란, 자바 설치와 IDE
-    - Python 포스팅
-        자료형, if문, for문, while문
-    - Javascript 포스팅
-        자료형, 프로토타입
-
-2. YouthProject
-
-    - routes 정의
-    - model 생성 (MongoDB & mongoose)
-    
-=======
 1. Ubuntu (`O`)
 
     - 학습 환경 설치
@@ -156,16 +140,32 @@
 
 ## 2019 02.10 Sunday
 
-1. Ubuntu
+1. Ubuntu (`O`)
 
     - dpkg와 apt-get
     - 찾기 명령(find, which, whereis, locate)과 예약 명령(cron, at)
 
-2. YouthProject
+2. YouthProject (`->`)
 
     - express.js 인증 로직 구현
     - mongoose 활용한 Schema 작성
     - 라우트 설정 완료
 
 [10일 일요일 학습노트](Day10.md)
->>>>>>> 656d40f70108346f11b0cccddcbf4c5fee1646ff
+
+## 2019 02.11 Monday
+
+1. Ubuntu (`X`)
+
+    - ubuntu network
+
+2. YouthProject (`X`)
+
+    - express.js 인증 로직 구현
+    - mongoose 활용한 Schema 작성
+    - 라우트 설정 완료
+
+> 교육 및 이력서 작성으로 하지못함
+
+## 2019 02.12 Tuesday
+
