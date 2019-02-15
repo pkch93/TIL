@@ -153,6 +153,7 @@
 
 [10일 일요일 학습노트](Day10.md)
 
+<<<<<<< HEAD
 ## 2019 02.15 Friday
 
 1. Ubuntu
@@ -166,3 +167,21 @@
     - mongoose Schema 작성
 
 [15일 금요일 학습노트](Day15.md)
+=======
+## 2019 02.11 Monday
+
+1. Ubuntu (`X`)
+
+    - ubuntu network
+
+2. YouthProject (`X`)
+
+    - express.js 인증 로직 구현
+    - mongoose 활용한 Schema 작성
+    - 라우트 설정 완료
+
+> 교육 및 이력서 작성으로 하지못함
+
+## 2019 02.12 Tuesday
+
+>>>>>>> b73cc7848edc18a90f201889b8827a6829cd8bf0
