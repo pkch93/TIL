@@ -140,15 +140,29 @@
 
 ## 2019 02.10 Sunday
 
-1. Ubuntu
+1. Ubuntu (`O`)
 
     - dpkg와 apt-get
     - 찾기 명령(find, which, whereis, locate)과 예약 명령(cron, at)
 
-2. YouthProject
+2. YouthProject (`->`)
 
     - express.js 인증 로직 구현
     - mongoose 활용한 Schema 작성
     - 라우트 설정 완료
 
 [10일 일요일 학습노트](Day10.md)
+
+## 2019 02.15 Friday
+
+1. Ubuntu
+
+    - 명령어 복습 (특히 `user`, `group`관리 및 압축, 묶기)
+    - 네트워크, 데몬 및 서비스
+
+2. YouthProject
+
+    - express.js & jwt 인증 로직 구현
+    - mongoose Schema 작성
+
+[15일 금요일 학습노트](Day15.md)
