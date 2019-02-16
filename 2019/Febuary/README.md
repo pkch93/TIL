@@ -153,35 +153,29 @@
 
 [10일 일요일 학습노트](Day10.md)
 
-<<<<<<< HEAD
 ## 2019 02.15 Friday
 
-1. Ubuntu
+1. Ubuntu (`O`)
 
     - 명령어 복습 (특히 `user`, `group`관리 및 압축, 묶기)
     - 네트워크, 데몬 및 서비스
 
-2. YouthProject
+2. YouthProject (`->`)
 
     - express.js & jwt 인증 로직 구현
     - mongoose Schema 작성
 
 [15일 금요일 학습노트](Day15.md)
-=======
-## 2019 02.11 Monday
 
-1. Ubuntu (`X`)
+## 2019 02.16 Saturday
 
-    - ubuntu network
+1. YouthProject (`->`)
 
-2. YouthProject (`X`)
+    - express.js & jwt 인증 로직 구현
+    - mongoose Schema 작성
 
-    - express.js 인증 로직 구현
-    - mongoose 활용한 Schema 작성
-    - 라우트 설정 완료
+2. 온코더 코딩테스트
 
-> 교육 및 이력서 작성으로 하지못함
+    [제 10회 코딩 테스트](https://www.oncoder.com/exam/entrance/BJ7h1CEe7V)
 
-## 2019 02.12 Tuesday
-
->>>>>>> b73cc7848edc18a90f201889b8827a6829cd8bf0
+[16일 토요일 학습노트](Day16.md)
