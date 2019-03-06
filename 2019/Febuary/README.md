@@ -169,12 +169,12 @@
 
 ## 2019 02.16 Saturday
 
-1. YouthProject (`->`)
+1. YouthProject (`O`)
 
     - express.js & jwt 인증 로직 구현
     - mongoose Schema 작성
 
-2. 온코더 코딩테스트
+2. 온코더 코딩테스트 (`O`)
 
     [제 10회 코딩 테스트](https://www.oncoder.com/exam/entrance/BJ7h1CEe7V)
 
