@@ -151,19 +151,32 @@
 
 [10일 일요일 학습노트](Day10.md)
 
-## 2019 02.11 Monday
+## 2019 02.15 Friday
 
-1. Ubuntu (`X`)
+1. Ubuntu (`O`)
 
-    - ubuntu network
+    - 명령어 복습 (특히 `user`, `group`관리 및 압축, 묶기)
+    - 네트워크, 데몬 및 서비스
 
-2. YouthProject (`X`)
+2. YouthProject (`->`)
 
-    - express.js 인증 로직 구현
-    - mongoose 활용한 Schema 작성
-    - 라우트 설정 완료
+    - express.js & jwt 인증 로직 구현
+    - mongoose Schema 작성
 
-> 교육 및 이력서 작성으로 하지못함
+[15일 금요일 학습노트](Day15.md)
+
+## 2019 02.16 Saturday
+
+1. YouthProject (`->`)
+
+    - express.js & jwt 인증 로직 구현
+    - mongoose Schema 작성
+
+2. 온코더 코딩테스트
+
+    [제 10회 코딩 테스트](https://www.oncoder.com/exam/entrance/BJ7h1CEe7V)
+
+[16일 토요일 학습노트](Day16.md)
 
 ## 2월 학습 회고
 
@@ -171,4 +184,4 @@
 
 매일 학습을 하긴 했지만 개인 노트와 이전에 진행했던 YouthProject의 리펙토링을 진행하느라 TIL에 소흘했습니다.
 
-매일 계획 세우기 - 새롭게 배운 내용 DAY-X 마크다운 파일에 작성 - 하루 공부 회고 방식으로 TIL 작성에 익숙해지도록 계속 활용할 것입니다..
+매일 계획 세우기 - 새롭게 배운 내용 DAY-X 마크다운 파일에 작성 - 하루 공부 회고 방식으로 TIL 작성에 익숙해지도록 계속 활용할 것입니다.
