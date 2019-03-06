@@ -12,7 +12,6 @@
 ***목표***
 
 1. Spring으로 Restful API 서버 만들기
-    - [백기선 님의 스프링 기반 REST API 개발](https://www.inflearn.com/course/spring_rest-api/)
 2. Node.js && Express.js && MongoDB
 3. Numpy && Pandas & matplotlib
 
@@ -118,13 +117,13 @@
 
     위 내용 중 `PL` / `Web` 관련 포스팅은 이번달 이내에 마치는 것을 목표로 하고 있습니다.
 
-    3. Restful API & OAuth2
+3. Restful API & OAuth2
 
-        특히 Spring에서 Restful API 서버 개발 및 Authorization 서버 / Resource 서버 적용에 관심을 갖고 학습할 계획입니다.
-        
-    4. Ubuntu
+    특히 Spring에서 Restful API 서버 개발 및 Authorization 서버 / Resource 서버 적용에 관심을 갖고 학습할 계획입니다.
+    
+4. Ubuntu
 
-        리눅스 명령어와 리눅스로 서버 관리 하는 것에 관심을 갖고 학습할 예정입니다. (VMware 사용) 
+    리눅스 명령어와 리눅스로 서버 관리 하는 것에 관심을 갖고 학습할 예정입니다. (VMware 사용) 
 
 > ### 학습계획
 >
@@ -134,6 +133,39 @@
 >
 > Algorithm 문제 풀이
 >
-> - programmers 코딩테스트 고득점 kit 전부 풀어보기 목표
+> ~~programmers 코딩테스트 고득점 kit 전부 풀어보기 목표~~
 
 [2019년 2월 학습 요약 보러가기](2019/Febuary)
+
+## 2019년 3월
+
+***목표***
+
+1. Java Web
+
+    - Servlet & JSP 복습
+    - Spring Framework 기초 복습
+    - OAuth 2.0 Authorization Server & Resource Server
+
+2. Spring Restful API
+
+    - Spring Data JPA // Spring Data Rest
+    - Spring HATEOAS
+    - Spring REST Docs    
+    
+3. 웹서버와 AWS + Docker
+
+    - nginx vs apache
+    - AWS EC2 인스턴스로 웹 애플리케이션 서버 배포
+    - Docker images 만들기 및 Docker 기초 복습
+
+> 시간에 따라 여유가 된다면 진행할 예정입니다.
+
+4. *Web Crawler 및 데이터 조작*
+
+    > 파이썬을 활용한 웹 크롤러 설계 및 코드 짜보기
+    
+    - Django Web Crawler
+    - Numpy & Pandas & matplotlib
+    
+[2019년 3월 학습 요약 보러가기](2019/March)
