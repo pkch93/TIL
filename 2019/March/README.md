@@ -29,23 +29,23 @@
     - Django Web Crawler
     - Numpy & Pandas & matplotlib
     
-## 2019 03.01 Friday (2019년 3월 1일 금요일)
+## 2019 03.01 Friday
 
 1. SSAFY Algorithm 과제 풀이 (`O`)
 
-## 2019 03.02 Saturday (2019년 3월 2일 토요일)
+## 2019 03.02 Saturday
 
 1. Java Web (`O`)
 
     - Servlet 기초 복습
     
-## 2019 03.03 Sunday (2019년 3월 3일 일요일)
+## 2019 03.03 Sunday
 
 1. Java Web (`O`)
    
     - JSP 기초 복습
     
-## 2019 03.04 Monday (2019년 3월 4일 월요일)
+## 2019 03.04 Monday
 
 1. Java (`O`)
 
@@ -54,7 +54,7 @@
     - annotation
     - Serialize (자바 직렬화)
     
-## 2019 03.05 Tuesday (2019년 3월 5일 화요일)
+## 2019 03.05 Tuesday
 
 1. Java (`O`)
 
@@ -62,7 +62,15 @@
     - Comparable vs Comparator
     - equals()와 hashcode()
     
-## 2019 03.06 Wendesday (2019년 3월 6일 수요일)
+## 2019 03.06 Wendesday 
+
+1. Java Web (`X`)
+
+    - Servlet & JSP로 게시판 사이트 구현
+
+> 외부 사정으로 인해 목표를 성취하지 못했습니다.
+
+## 2019 03.07 Thursday
 
 1. Java Web
 

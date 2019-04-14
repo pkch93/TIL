@@ -169,3 +169,26 @@
     - Numpy & Pandas & matplotlib
     
 [2019년 3월 학습 요약 보러가기](2019/March)
+
+## 2019년 4월
+
+***목표***
+
+1. Spring 복습
+
+    - Spring MVC / Spring Data JPA / Spring Security
+    - gradle 학습
+    - 복습 프로젝트 (영화진흥위원회 API를 이용한 영화 추천 사이트)
+
+2. 알고리즘 하루에 한 문제씩
+
+    - programmers 코딩테스트 고득점 kit
+    - 백준 알고리즘 문제
+
+3. 구글 머신러닝 스터디잼 (중급반)
+
+    - 이전에 배웠던 numpy, pandas, matplotlib 복습
+    - 스터디 진행 상황에 맞춰 진도 맞춰갈 예정
+    - 머신러닝과 데이터 분석이 어떤건지 개념만 익히는 것이 목표
+
+[2019년 4월 학습 요약 보러가기](2019/April)
