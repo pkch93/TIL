@@ -29,6 +29,4 @@
     - URI Links
     - CORS
 
-2. gradle
-
 [15일 학습한 내용](Day15.md)
