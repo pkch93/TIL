@@ -200,3 +200,111 @@ Settings 객체는 settings.gradle과 연관된 객체이다. 멀티 프로젝�
 설정과 관련된 객체로 프로젝트 빌드 수행 전에 Settings 객체를 먼저 생성하게된다.
 
 [Settings 객체 Properties / Methods 참고](https://docs.gradle.org/current/dsl/org.gradle.api.initialization.Settings.html#N1918A)
+
+# 2. Spring MVC
+
+## - MVC Config
+
+MVC Config를 위해서 Spring은 자바, XML의 방법을 지원한다.
+
+> 최근에는 Java Configuration을 더 선호
+
+```java
+@Configuration
+@EnableWebMvc
+public class WebConfig implements WebMvcConfigurer{
+    // configuration method,,
+}
+```
+위와 같이 `@EnableWebMvc`으로 Spring의 MVC 기능을 활성화 할 수 있다. 이는 XML 설정에서 `<mvc:annotation-driven>`과 같다.
+
+Java Configuration에서는 `WebMvcConfigurer` 인터페이스를 통해 해당 Spring application의 MVC 설정을 변경 혹은 추가할 수 있다.
+
+### Type Conversion
+
+기본적으로 Formatter로 `Number`와 `Date`에 대해 지원한다. 이들 Formatter를 사용하려면 `@NumberFormat`이나 `@DateTimeFormat` 어노테이션으로 적용할 수 있다.
+
+> DateFormat의 경우는 Java API인 `Date`나 `LocalDateTime`뿐 아니라 `Joda-Time`까지 지원한다.
+
+만약, custom한 `formatter`를 앱에 등록하고 싶다면 `WebMvcConfigurer`의 `addFormatters` 메서드를 `Override`하여 적용한다.
+
+```java
+@Configuration
+@EnableWebMvc
+public class WebConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addFormatters(FormatterRegistry registry){
+        // ..
+    }
+} 
+```
+
+### Validation
+
+classpath에 `Bean Validation`이 등록되어 있다면 해당 Validator가 `LocalValidatorFactoryBean`로써 global Validaor로 등록된다. 등록된 Validator는 `@Valid`나 controller에 `Validated` method arguments를 사용하여 유효성 검사를 할 수 있다.
+
+```java
+@Configuration
+@EnableWebMvc
+public class WebConfig implements WebMvcConfigurer {
+
+    @Override
+    public Validator getValidator() {
+        // ...
+    }
+} 
+```
+
+위는 Validator를 global하게 등록하는 방법이다. 만약 Handler에 지역적으로 적용하기 위해서는 다음과 다음과 같이 등록한다.
+
+```java
+@Controller
+public class MyController {
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.addValidators(new FooValidator());
+    }
+
+}
+```
+
+### Interceptors
+
+`WebMvcConfigurer`의 `addInterceptors`를 통해 인터셉터를 등록할 수 있다.
+
+> 인터셉터는 요청에 추가적인 처리를 할 때 사용할 수 있다.
+
+```java
+@Configuration
+@EnableWebMvc
+public class WebConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LocaleChangeInterceptor());
+        registry.addInterceptor(new ThemeChangeInterceptor()).addPathPatterns("/**").excludePathPatterns("/admin/**");
+        registry.addInterceptor(new SecurityInterceptor()).addPathPatterns("/secure/*");
+    }
+}
+```
+
+### Content Types
+
+request의 media type에 대해 `MediaType` 타입을 결정할 수 있다.
+
+기본적으로 `json`, `xml`, `rss`, `atom` 등의 URL path extension을 처음 체크한다. 그 다음으로 `Accept` 헤더를 체크한다.
+
+```java
+@Configuration
+@EnableWebMvc
+public class WebConfig implements WebMvcConfigurer {
+
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        configurer.mediaType("json", MediaType.APPLICATION_JSON);
+        configurer.mediaType("xml", MediaType.APPLICATION_XML);
+    }
+}
+```
