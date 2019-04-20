@@ -40,3 +40,17 @@
 1. Gradle
 
 [18일 학습한 내용](Day18.md)
+
+## 2019.04.20 Saturday
+
+1. Gradle
+
+    - task
+    - Gradle 객체 (Project, Settings, Gradle, Task 등)
+
+2. Spring MVC
+
+    - MVC config
+    - Spring MVC 실습
+
+[20일 학습한 내용](Day20.md)
