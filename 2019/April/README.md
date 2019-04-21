@@ -61,6 +61,21 @@
 
     - 파일 다루기
 
+[21일 학습한 내용](Day21.md)
+
+## 2019.04.22 Monday
+
+1. Gradle
+
+    - Working with files
+        [gradle 공식문서](https://docs.gradle.org/current/userguide/working_with_files.html)
+    - 의존관계
+
 2. Spring Core
 
-[21일 학습한 내용](Day21.md)
+3. Spring MVC
+
+    - View Technologies
+        template 엔진이 아닌 Rss / Atom / PDF / Excel / Jackson 등 관련 기능 
+        [https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-view-feeds]
+    - MVC config

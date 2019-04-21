@@ -75,4 +75,3 @@ FileTree fileTreeExclude = fileTree('src'){
 ```groovy
 FileTree fileTreeMap = fileTree(dir: 'src', include: '**/*.java', exclude: '**/Test????.java')
 ```
-
