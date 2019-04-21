@@ -54,3 +54,13 @@
     - Spring MVC 실습
 
 [20일 학습한 내용](Day20.md)
+
+## 2019.04.21 Sunday
+
+1. Gradle
+
+    - 파일 다루기
+
+2. Spring Core
+
+[21일 학습한 내용](Day21.md)
