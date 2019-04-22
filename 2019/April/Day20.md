@@ -82,7 +82,7 @@ task loop {
         }
     }
 }
-execTask1.dependOn 'execTask0','execTask2'
+execTask1.dependsOn 'execTask0','execTask2'
 ```
 
 위와 같이 task를 생성했다. `3.items` 반복으로 execTask0, execTask1, execTask2를 만든 스크립트이다.

@@ -1,0 +1,9 @@
+task filePath {
+    File file = file('practice.txt', PathValidation.FILE)
+
+    doLast {
+        println "$buildDir"
+        println file.path
+        println file.absolutePath
+    }
+} // File 객체로 해당 위치의 파일을 참조

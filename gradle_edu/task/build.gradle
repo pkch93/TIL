@@ -1,0 +1,64 @@
+task test{
+    doLast {
+        println 'hello world!'
+    }
+} // task 정의
+
+task controlTask {
+    doLast {
+        println 'second'
+    }
+    
+    doFirst {
+        println 'first'
+    }
+
+    doLast {
+        println 'third'
+    }
+} // task의 순서 제어
+
+task stringTask {
+    def str = "Hello World!"
+    doLast {
+        println str.toUpperCase()
+        println str.toLowerCase()
+    }
+} // groovy의 변수 사용
+
+task loopTask {
+    doLast {
+        10.times {
+            println it + 1
+        }
+    }
+} // loop 사용 (1부터 10까지 출력)
+
+3.times { i ->
+    task "execTask$i" {
+        doLast {
+            println "counter: $i"
+        }
+    }
+}
+execTask1.dependsOn 'execTask0', 'execTask2'
+/**
+ *  loop 사용해서 task 생성
+ *  dependsOn을 통해서 task간 의존관계 형성
+ */
+
+def taskNames = ['mapTask1': "일번", 'mapTask2': "이번", 'mapTesk3': "삼번"]
+
+taskNames.each {
+    name, value -> task "$name" {
+        doLast {
+            println value
+        }
+    }
+} // map 자료구조를 이용한 each 메서드 및 task 생성
+
+task descTask (description: 'print description'){
+    doLast {
+        println "$name: $description"
+    }
+} // task에서 제공하는 property 중 description 추가
