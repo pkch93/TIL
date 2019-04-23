@@ -7,3 +7,34 @@ task filePath {
         println file.absolutePath
     }
 } // File 객체로 해당 위치의 파일을 참조
+
+/*
+task copySingleFile(type: Copy){
+    File file = file('practice.txt')
+    from file
+    into "$buildDir/copy"
+}
+ */
+
+task copyMultipleFiles(type: Copy){
+    from 'practice.txt', 'practice2.txt', 'practice3.txt'
+    into "$buildDir/copy"
+} // 다중 파일 복사
+
+task copyCsvFile(type: Copy){
+    from '.'
+    include '*.csv'
+    into "$buildDir/copy"
+} // include로 csv 확장자 파일만 복사
+
+task copyDirectory(type: Copy){
+    from './test'
+    into "$buildDir/copy/test"
+} // 디렉터리 복사
+
+task copyDirectoryWithItself(type: Copy){
+    from ('./tests') {
+        include 'test1/**'
+    }
+    into "$buildDir/copy/test"
+} // 만약 폴더 내부가 아닌 폴더 그자체를 복사할때

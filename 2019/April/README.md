@@ -79,3 +79,21 @@
         template 엔진이 아닌 Rss / Atom / PDF / Excel / Jackson 등 관련 기능 
         [https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-view-feeds]
     - MVC config
+
+> 어제 몸이 아팠던 관계로 학습하지 못함
+
+## 2019.04.23 Tuesday
+
+1. Gradle
+
+    - Working with files
+        [gradle 공식문서](https://docs.gradle.org/current/userguide/working_with_files.html)
+
+2. Spring Core
+
+3. Spring MVC
+
+    - View Technologies
+        template 엔진이 아닌 Rss / Atom / PDF / Excel / Jackson 등 관련 기능 
+        [https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-view-feeds]
+    - MVC config
