@@ -97,3 +97,5 @@
         template 엔진이 아닌 Rss / Atom / PDF / Excel / Jackson 등 관련 기능 
         [https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-view-feeds]
     - MVC config
+
+[23일 학습한 내용](Day23.md)

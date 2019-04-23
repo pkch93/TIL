@@ -162,5 +162,120 @@ task unpackLibsDirectory(type: Copy) {
 
 zip 뿐만 아니라 jar, war, ear에 대해서도 `zipTree()` 메서드를 사용한다.
 
+### - File paths in depth
 
+`File`에 대해 어떤 특정 logic을 수행하기 위해서는 파일이 어디있는지 파일의 위치를 알아야한다. Gradle에서는 단일 파일은 Java의 File 클래스를 사용하고 path collections를 다루는 데는 Gradle의 새로운 API를 사용한다.
 
+단, 이때 String으로 하드코딩한 `file path`에 대해 유의해야한다.
+
+#### On hard-coded file paths
+
+String path는 빌드 시에는 좋지 못한 선택이다. 어떤 파일의 위치가 바뀐다면 Gradle이 해당 파일을 놓칠 수 있으며 이는 빌드 실패로 이어질 수 있기 때문이다.
+
+따라서, 가능하면 task의 `local variable`이나 `project properties`를 사용하여 변수로 path를 지정하는 것이 바람직하다.
+
+```groovy
+ext {
+    archivesDirPath = "$buildDir/archives"
+}
+
+task packageClasses(type: Zip) {
+    archiveAppendix = "classes"
+    destinationDirectory = file(archivesDirPath)
+
+    from compileJava
+}
+```
+위 예시에서는 class를 패키징하기 위해 `packageClasses` task를 정의했다. 이때 `compileJava`로 패키징하기 위한 파일의 source를 가져오고 `archivesDirPath` project property를 정의하여 사용했다.
+
+#### Single files and directories
+
+Gradle은 `Project.file` 메서드를 제공하여 해당 경로의 단일 파일이나 폴더의 위치를 참조할 수 있다.
+
+```groovy
+// Using a relative path
+File configFile = file('src/config.xml')
+
+// Using an absolute path
+configFile = file(configFile.absolutePath)
+
+// Using a File object with a relative path
+configFile = file(new File('src/config.xml'))
+
+// Using a java.nio.file.Path object with a relative path
+configFile = file(Paths.get('src', 'config.xml'))
+
+// Using an absolute java.nio.file.Path object
+configFile = file(Paths.get(System.getProperty('user.home')).resolve('global-config.xml'))
+```
+위와 같이 file 메서드에 `File` class나 `Path` 인스턴스를 인자로 제공하여 File 클래스를 만들 수 있다.
+
+단, file 메서드는 항상 상대경로를 현재 프로젝트 폴더 (child project)에 상대경로로 바꾼다. 만약 root project 폴더의 상대경로로 파일 경로를 사용하고 싶다면 `Project.getRootDir()`로 절대경로로 만들어 낼 수 있다.
+
+```groovy
+File configFile = file("$rootDir/shared/config.xml")
+```
+위와 같이 `$rootDir`을 사용하여 file의 경로를 지정하면 절대경로로 `resolve` 하여 사용할 수 있다.
+
+### - Filtering file content (token substitution, templating, etc.)
+
+> 위 내용은 앞서 include 등을 사용하여 file 이름으로 filter를 하는 것과 다름
+
+file content filtering은 복사하는 파일의 내용을 변형하도록 허용하는 것을 의미한다.
+
+```groovy
+import org.apache.tools.ant.filters.FixCrLfFilter
+import org.apache.tools.ant.filters.ReplaceTokens
+
+task filter(type: Copy) {
+    from 'src/main/webapp'
+    into "$buildDir/explodedWar"
+    // Substitute property tokens in files
+    expand(copyright: '2009', version: '2.3.1')
+    expand(project.properties)
+    // Use some of the filters provided by Ant
+    filter(FixCrLfFilter)
+    filter(ReplaceTokens, tokens: [copyright: '2009', version: '2.3.1'])
+    // Use a closure to filter each line
+    filter { String line ->
+        "[$line]"
+    }
+    // Use a closure to remove lines
+    filter { String line ->
+        line.startsWith('-') ? null : line
+    }
+    filteringCharset = 'UTF-8'
+}
+```
+
+expand의 경우 해당 파일을 `groovy template`로 취급하여 tokens의 `key`에 해당하는 부분을 `value`로 바꾸는 메서드이다.
+
+[groovy template 참고](http://docs.groovy-lang.org/latest/html/api/groovy/text/SimpleTemplateEngine.html)
+
+### Using `CopySpac` class
+
+copy spec은 파일 / 폴더가 어디에 복사되는지, 복사되는 동안 어떤 일이 일어나는 지 등을 정의하는 것이다. copy spec은 `1. tasks들과 독립적이라는 점`과 `2. 계층구조를 가진다는 점`이 특징이다.
+
+```groovy
+CopySpec webAssetsSpec = copySpec {
+    from 'src/main/webapp'
+    include '**/*.html', '**/*.png', '**/*.jpg'
+    rename '(.+)-staging(.+)', '$1$2'
+}
+
+task copyAssets (type: Copy) {
+    into "$buildDir/inPlaceApp"
+    with webAssetsSpec
+}
+
+task distApp(type: Zip) {
+    archiveFileName = 'my-app-dist.zip'
+    destinationDirectory = file("$buildDir/dists")
+
+    from appClasses
+    with webAssetsSpec
+}
+```
+위 예시외 같이 다양한 task들에서 공유하여 사용할 수 있다. task에서 `copySpec`을 적용할 때는 `with` 메서드를 이용한다.
+
+[공식문서 : working with files](https://docs.gradle.org/current/userguide/working_with_files.html)
