@@ -99,3 +99,16 @@
     - MVC config
 
 [23일 학습한 내용](Day23.md)
+
+## 2019.04.24 Wendesday
+
+1. Gradle
+
+    - (authoring task)[[https://docs.gradle.org/current/userguide/more_about_tasks.html#header]]
+    - 의존관계
+
+2. Spring Core
+
+3. Spring MVC
+
+    - MVC Config
