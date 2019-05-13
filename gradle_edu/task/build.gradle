@@ -1,3 +1,26 @@
+import javax.inject.Inject
+
+class CustomArgTask extends DefaultTask {
+    final String message
+    final int number
+
+    @Inject
+    CustomArgTask (String message, int number){
+        this.message = message
+        this.number = number
+    }
+}
+
+task mytask(type: CustomArgTask, constructorArgs: ['this is custom task', 1]){
+    doLast {
+        println message
+        println number
+    }
+} // CustomArgTask라는 커스텀 task로 인자 받기
+
+// 위 CustomArgTask는 TaskContainer를 사용하여 생성할 수도 있다.
+// tasks.create('mytask', CustomArgTask, 'this is custom task', 1)
+
 task test{
     doLast {
         println 'hello world!'
