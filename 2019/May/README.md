@@ -20,3 +20,17 @@
     - programmers 풀이 level1 추가하기
 
     > level1 푼 문제 중 절반 추가
+
+## 2019.05.15 Wendesday
+
+1. github 알고리즘문제 올리기
+
+    - programmers 풀이 level1 완료
+
+2. java
+
+    - 정규표현식 객체인 Matcher, Pattern 알아보기
+
+3. gradle
+
+    - 의존관계 익히기
