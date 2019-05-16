@@ -21,7 +21,7 @@
 
     > level1 푼 문제 중 절반 추가
 
-## 2019.05.15 Wendesday
+## 2019.05.16 Thursday
 
 1. github 알고리즘문제 올리기
 
@@ -30,7 +30,3 @@
 2. java
 
     - 정규표현식 객체인 Matcher, Pattern 알아보기
-
-3. gradle
-
-    - 의존관계 익히기
