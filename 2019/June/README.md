@@ -49,8 +49,9 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
 
 1. gradle
 
-    - Learning the Basics of Authoring Gradle Builds 
+    - Learning the Basics of Authoring Gradle Builds
 
-2. React-Router
+        1. Introducing the Basics of Build Scripts
+        2. Working with Tasks
 
 [3일 학습한 내용](Day03.md)
