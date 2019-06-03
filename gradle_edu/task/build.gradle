@@ -85,3 +85,5 @@ task descTask (description: 'print description'){
         println "$name: $description"
     }
 } // task에서 제공하는 property 중 description 추가
+
+defaultTasks 'descTask'

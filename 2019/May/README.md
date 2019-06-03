@@ -30,3 +30,13 @@
 2. java
 
     - 정규표현식 객체인 Matcher, Pattern 알아보기
+
+## 2019.05.27 Monday
+
+1. java
+
+    - final을 써야하는 이유
+
+2. gradle
+
+    - authoring task 복습
