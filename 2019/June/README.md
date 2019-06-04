@@ -45,7 +45,7 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
 
 [작업물 ~~추후 완성 목표!~~](https://github.com/pkch93/angel_hack_desserts)
 
-### 3일
+### Day 3
 
 1. gradle
 
@@ -55,3 +55,14 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
         2. Working with Tasks
 
 [3일 학습한 내용](Day03.md)
+
+### Day 4
+
+1. 개발서적 탐독
+
+    - 클린코드 ~2장(네이밍)까지
+    - 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴 ~Part1 까지
+
+2. gradle
+
+    - Learning More About Build Scripts 학습
