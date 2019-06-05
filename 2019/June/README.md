@@ -66,3 +66,13 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
 2. gradle
 
     - Learning More About Build Scripts 학습
+
+[4일 학습한 내용](Day04.md)
+
+### Day 5
+
+1. 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴
+
+    - SOLID 원칙
+
+[5일 학습한 내용](Day05.md)
