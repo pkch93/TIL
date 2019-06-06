@@ -83,7 +83,14 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
 
     - DI와 서비스 로케이터 학습
 
-2. Disserts
+2. Gradle
+
+    - init.gradle vs settings.gradle
+    - understanding the build lifecycle
+
+3. Disserts (X)
 
     - React Router 적용
     - 캘린더 구현
+
+[6일 학습한 내용](Day06.md)
