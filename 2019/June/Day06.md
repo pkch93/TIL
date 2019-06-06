@@ -345,3 +345,5 @@ println "source dir is $a.srcDir"
 위와 같이 tasks라는 TaskContainer 타입의 객체에 Action을 추가할 수 있다. 위는 whenTaskAdded를 추가하여 task를 추가할 때마다 수행할 작업을 closure로 제공한다.
 
 [추가적인 task graph events](<https://docs.gradle.org/current/javadoc/org/gradle/api/execution/TaskExecutionGraph.html>)
+
+[Build Lifecycle 참고](https://docs.gradle.org/current/userguide/build_lifecycle.html)

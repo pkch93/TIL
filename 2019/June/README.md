@@ -94,3 +94,25 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
     - 캘린더 구현
 
 [6일 학습한 내용](Day06.md)
+
+### Day 7
+
+1. 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴
+
+    - strategy Pattern (전략 패턴)
+    - template method Pattern (템플릿 메서드 패턴)
+    - state Pattern (상태 패턴)
+    - decorator Pattern (데코레이터 패턴)
+    - proxy pattern (프록시 패턴)
+
+2. gradle
+
+    - logging
+    - configuring multi-project builds
+
+3. Disserts
+
+    - React Router 적용
+    - 캘린더 구현
+
+[7일 학습한 내용](Day07.md)
