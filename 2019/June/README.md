@@ -76,3 +76,14 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
     - SOLID 원칙
 
 [5일 학습한 내용](Day05.md)
+
+### Day 6
+
+1. 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴
+
+    - DI와 서비스 로케이터 학습
+
+2. Disserts
+
+    - React Router 적용
+    - 캘린더 구현
