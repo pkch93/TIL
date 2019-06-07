@@ -167,3 +167,80 @@ Decorator는 모든 데코레이터를 위한 기반 기능을 제공하는 추�
 >
 > 데코레이터 패턴은 기능 확장에 초점
 
+## Gradle
+
+### Logging
+
+log는 빌드 툴에서 주된 **UI**이다. Gradle에서는 6개의 log level을 두고 있다.
+
+- Log levels
+
+log level은 command line 또는 gradle.properties를 통해 결정 할 수 있다. 
+
+1. no option : LIFECYCLE
+2. -q or --quiet : QUIET
+3. -w or --warn : WARN
+4. -i or --info : INFO
+5. -d or --debug : DEBUG (모든 log message 출력)
+
+- stacktrace options
+
+gradle에서는 stacktrace를 사용한다면 Full stacktrace보다 Trancated stacktrace를 사용하길 권장한다. full의 경우는 deprecation warning 등 상대적으로 중요하지 않은 로그까지 보여주기 때문에 매우 번잡한 로그를 만날 수 있다.
+
+1. -s or --stacktrace : Truncated stacktrace
+2. -S or --full-stacktrace : Full stacktrace
+3. no option : 빌드 에러시에만 출력
+
+- Writing your own log messages
+
+로그를 출력하는 가장 기본적인 방법은 println 등의 표준 출력을 이용하는 것이다.
+
+```groovy
+// build.gradle
+println 'it is custom log'
+```
+
+또한, gradle은 logger property를 통해 log를 찍을 수 있도록 도와준다. gradle의 logger는 `SLF4J`를 확장하였다.
+
+```groovy
+logger.quiet('An info log message which is always logged.')
+logger.error('An error log message.')
+logger.warn('A warning log message.')
+logger.lifecycle('A lifecycle info log message.')
+logger.info('An info log message.')
+logger.debug('A debug log message.')
+logger.trace('A trace log message.')
+```
+
+logger를 사용하면 placeholder를 이용해서 동적으로 log를 작성할 수 있도록 도와준다. 
+
+```groovy
+logger.info('this log level is {}', 'info');
+```
+
+위 출력 결과는 `this log level is info`가 된다.
+
+- Logging from external tools and libraries
+
+gradle은 기본적으로 표준 출력을 QUIET level, 표준 에러를 ERROR level로 출력한다. 이런 설정은 변경할 수 있다. gradle의 Project 인스턴스는 LoggingManager를 제공해주는데 이는 gradle이 빌드스크립트를 평가할 때 log 레벨을 선택할 수 있도록 해준다.
+
+```groovy
+logging.captureStandardOutput LogLevel.INFO
+println 'A message which is logged at INFO level'
+```
+
+위와 같이 logging이라는 LoggingManager 타입의 메서드 captureStandardOutput으로 표준 출력을 INFO레벨로 출력하도록 설정할 수 있다.
+
+- Changing what Gradle logs
+
+Gradle의 log UI를 커스텀하여 변경할 수 있다. (로거 정보 강조, 포멧 변경 등) `Gradle.useLogger()`를 사용하여 기존 로거를 대체할 수 있다.
+
+커스텀한 logger는 다음의 listener interface의 구현체를 사용할 수 있다.
+
+1. BuildListener
+2. ProjectEvalutationListener
+3. TaskExecutionGraphListener
+4. TaskExecutionListener
+5. TaskActionListener
+
+useLogger로 커스텀 로거를 등록했을때 기존의 logger에서 등록한 logger의 구현 interface만을 대체한다.
