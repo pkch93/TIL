@@ -114,5 +114,7 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
 
     - React Router 적용
     - 캘린더 구현
+    - 리포트 구현
+    - 반응형 웹 구성
 
 [7일 학습한 내용](Day07.md)
