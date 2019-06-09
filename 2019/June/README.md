@@ -120,11 +120,11 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
 
 ### Day 8
 
-1. PWA codelab
+1. PWA codelab (O)
 
-2. redux
+2. redux (O)
 
-3. Disserts
+3. Disserts (X)
 
     - Redux 적용
     - 캘린더 설계 및 구현
@@ -132,3 +132,8 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
     - AWS Cognito 동작과정 파악 및 네비게이션 바 설계 (`Optional`)
 
 [8일 학습한 내용](Day08.md)
+
+### Day 9
+
+1. Disserts
+
