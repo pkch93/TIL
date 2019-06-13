@@ -6,6 +6,26 @@
 
 - redux-saga
 
+saga를 사용하면 다음과 같은 장점이 있다.
+
+1. 비동기 코드를 동기 코드처럼 쓸 수 있다.
+2. 테스트가 편하다.
+3. 복잡한 데이터 처리를 도와준다.
+
+![redux-saga-logic](https://user-images.githubusercontent.com/30178507/59155138-984ac600-8abd-11e9-9093-3e6bd77c4cfd.PNG)
+
+saga는 action이 일어나는 순간 그 action을 take한다. 그리고 side effect를 통해 결과를 put해준다.
+
+saga가 take로 액션을 기다릴 수 있는 핵심은 ES6 generator이다.
+
+- ES6 generator
+
+ES6에 추가된 코루틴(coroutine) 함수로 function 키워드에 `*`를 선언하여 사용할 수 있다.
+
+> 코루틴이란 제어를 caller에게 넘겨주는 것을 의미
+
+yield 키워드를 만나면 스스로 멈추고 컨트롤을 callee에게 넘긴다.
+
 redux-saga에서 핵심은 제너레이터와 이펙트!
 
 1. 제너레이터
@@ -64,6 +84,8 @@ saga는 제너레이터함수이고 미들웨어는 saga에게 yield 값을 받�
 6. takeLatest
 
    takeLatest와는 달리 만약 현재 작업 진행중에서 다른 작업 요청이 들어오면 현재 작업을 취소하고 들어온 요청을 처리한다.
+
+[참고 영상: Redux-thunk에서 Redux-saga로 이사하기](<https://www.youtube.com/watch?v=VHszuWZk0JA>)
 
 [redux-saga: 제너레이터와 이팩트 참고](<https://meetup.toast.com/posts/140>)
 

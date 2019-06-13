@@ -135,5 +135,24 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
 
 ### Day 9
 
-1. Disserts
+[9일 학습한 내용](Day09.md)
 
+### Day10 ~ Day13
+
+우테코 웹, DB 미션 수행
+
+※ 미션 참고 링크
+
+[DTO 참고](https://www.slipp.net/questions/22)
+[DTO 참고 2](https://www.slipp.net/wiki/pages/viewpage.action?pageId=2031636)
+[MySQL check Constraint 참고](https://stackoverflow.com/questions/2115497/check-constraint-in-mysql-is-not-working)
+> MySQL은 check 제약조건을 8.0.16 버전 이후부터 제공함
+
+### Day13
+
+1. 클린코드
+    
+    - 깨끗한 코드
+    - 의미있는 이름
+
+[13일 학습한 내용](Day13.md)
