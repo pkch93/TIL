@@ -154,5 +154,3 @@ Angelhack 2019 Seoul 참가 (desserts 팀)
     
     - 깨끗한 코드
     - 의미있는 이름
-
-[13일 학습한 내용](Day13.md)
