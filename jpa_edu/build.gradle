@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'edu.pkch'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+ext {
+    hibernateVersion = '4.3.10.Final'
+    h2dbVersion = '1.4.187'
+    junitVersion = '5.5.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.hibernate:hibernate-entitymanager:${hibernateVersion}"
+    implementation "com.h2database:h2:${h2dbVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+}
