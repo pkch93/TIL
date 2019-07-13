@@ -12,3 +12,9 @@
 1. DispatcherServlet이 HandlerMapping과 HandlerAdapter를 가져오는 과정
 
 [12일 학습내용 보기](Day12.md)
+
+## Day 13
+
+1. 다양한 HandlerMapping (RequestMappingHandlerMapping을 중심으로)
+
+[13일 학습내용 보기](Day13.md)
