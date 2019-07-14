@@ -6,10 +6,11 @@ group 'edu.pkch'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
 
 ext {
     hibernateVersion = '4.3.10.Final'
-    h2dbVersion = '1.4.187'
+    h2dbVersion = '1.4.197'
     junitVersion = '5.5.0'
 }
 

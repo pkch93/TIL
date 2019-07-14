@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
 
-    <persistence-unit name="jpaedu">
+        <persistence-unit name="jpaedu">
+            <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+            <class>edu.pkch.jpaedu.Member</class>
+            <properties>
+                <!-- 필수 속성 -->
+                <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+                <property name="javax.persistence.jdbc.user" value="sa"/>
+                <property name="javax.persistence.jdbc.password" value=""/>
+                <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+                <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
 
-        <properties>
+                <!-- 옵션 -->
+                <property name="hibernate.show_sql" value="true" />
+                <!-- 하이버네이트가 실행한 SQL 출력 여부 옵션 -->
+                <property name="hibernate.format_sql" value="true" />
+                <!-- 하이버네이트가 실행한 SQL을 보기 쉽게 출력 -->
+                <property name="hibernate.use_sql_comments" value="true" />
+                <!-- 쿼리 출력시 주석도 함께 출력 -->
+                <property name="hibernate.id.new_generator_mappings" value="true" />
+                <!-- JPA 표준에 맞게 새로운 키 생성 전략 사용 -->
 
-            <!-- 필수 속성 -->
-            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+<!--                <property name="hibernate.hbm2ddl.auto" value="create" />-->
+            </properties>
+        </persistence-unit>
 
-            <!-- 옵션 -->
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.use_sql_comments" value="true" />
-            <property name="hibernate.id.new_generator_mappings" value="true" />
-
-            <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
-        </properties>
-    </persistence-unit>
-
-</persistence>
+    </persistence>
