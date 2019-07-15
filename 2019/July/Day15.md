@@ -2,6 +2,16 @@
 
 # Manage Persistence (영속성 관리)
 
+## Entity
+
+Entity는 `@Entity`어노테이션이 붙은 클래스로써 반드시 식별자(`@Id`) 값을 가져야한다.
+
+이는 Persistence Context에서 식별자를 기준으로 Entity를 판단하기 때문이다.
+
+Entity는 POJO로 구현된다. (물론, JPA의 일부 어노테이션이 들어가지만,,)
+
+그럼 굳이 Entity가 자신이 `persist` 상태인지 아닌지 알고있을까? 답은 아니다. Persistence Context가 외부에서 Entity를 감시하는 역할로 Entity의 상태를 관리하고 있기 때문에 Entity는 현재 자신의 상태를 알지 못한다. 즉, 영속성 관련 개념은 Persistence Context가 가지고 있음을 알 수 있다.
+
 ## EntityManagerFactory와 EntityManager
 
 이전 Basic에서 둘 사이의 관계를 알아보았다. 이번에는 좀 더 보충하여 알아보겠다.
@@ -143,9 +153,60 @@ JPQL은 SQL로 변환되어 DB에 직접 조회하기 때문에 Persistence Cont
 
 기본 옵션은 `FlushModeType.AUTO`, commit에만 `flush`하는 옵션은 `FlushModeType.COMMIT`이다.
 
-## 준영속
+# 준영속
 
-## 궁금한점
+준영속상태(detach)란 Persistence Context가 더이상 관리하지 않는 상태를 의미한다. 영속상태의 객체를 준영속상태로 만들기 위해서는 다음 3가지 방법이 있다.
+
+1. EntityManager.detach(Object o)
+2. EntityManager.clear()
+3. EntityManager.close()
+
+1번의 경우는 하나의 Entity를 Persistence Context에서 제거하는 방법이고 2, 3번의 경우는 Persistence Context의 모든 Entity를 제거하는 방법이다.
+
+하나의 트랜잭션에서 Entity를 영속상태에서 준영속 상태로 만들게 되면  Persistence Context에서는 관리하지 않는 Entity로 제거되지만 ActionQueue, 즉, 내부 쿼리 저장소에는 남아있게 된다. 때문에 이후 Persistence Context의 변화로 인한 `flush`가 발생하면 detach된 쿼리까지 DB와 동기화된다.
+
+> 참고로 영속 상태의 Entity는 주로 EntityManager가 `close`되면서 준영속 상태가 된다.
+
+### 특징
+
+1. 비영속 상태 `new / transient` 에 가깝다.
+
+    Persistence Context가 관리하지 않으므로 Persistence Context의 기능인 1차 캐싱, 지연로딩, 쓰기 지연, 변경 감지 등의 기능이 동작하지 않는다.
+
+2. 식별자 값을 가진다.
+
+    비영속 상태 Entity도 결국은 영속 상태였었기 때문에 식별자 값을 반드시 갖는다.
+
+3. 지연로딩 불가
+
+    Persistence Context가 관리하지 않으므로 불가
+
+### 다시 영속상태로 만드는 방법 `merge`
+
+준영속상태의 Entity를 영속상태로 만들기 위해서는 `EntityManager.merge(Entity)`를 사용한다.  `merge`를 하게 되면 준영속 상태의 Entity를 받아 그 정보로 새로운 영속 상태의 Entity를 반환한다.
+
+이때 `merge`는 인자로 들어오는 Entity가 `transient`이든 `detach`든 상관하지 않는다.
+
+이 방법이 가능한 이유는 `merge`의 동작방식을 이해하면 알 수 있다.
+
+1. 먼저 Persistence Context의 1차 캐시를 검사
+2. 1차 캐시에서 찾는 Entity가 존재하지 않는다면 DB조회 (`SELECT`문 호출)
+3. DB조회시에도 없다면 인자로 받은 Entity를 `persist`한다.
+4. 만약 1차 캐시 또는 DB에 있었던 준영속상태의 Entity라면 인자로 받은 Entity와 비교하여 바뀐점은 바꿔서 Persistence Context에 저장한다.
+5. 이렇게 새로이 Persistence Context에 저장된 Entity 리턴
+
+> 즉, merge는 save or update 쿼리가 되는 것이다.
+
+# 궁금한점
 
 1. 왜 update시 transaction not active 오류가 발생하는지?
+
+    Hibernate는 id 변경을 **절대** 불가하도록 만들었다. id를 update하려고해서 일어난 error
+
+    단, 로그가 transaction not active로 나타나서 오류를 찾는데 힘들었음...
+
+    참고 : [https://stackoverflow.com/questions/15539922/hibernate-update-the-primary-key-id-column-in-the-table](https://stackoverflow.com/questions/15539922/hibernate-update-the-primary-key-id-column-in-the-table)
+
 2. transaction begin / commit 없이도 왜 동작하는지, 없을때랑 있을때 차이
+
+    참고 : [https://stackoverflow.com/questions/39555878/hibernate-persist-without-transaction](https://stackoverflow.com/questions/39555878/hibernate-persist-without-transaction)

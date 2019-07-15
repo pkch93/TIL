@@ -18,6 +18,7 @@ public class JpaMain {
             logic(em);
             tx.commit();
         } catch (Exception e) {
+            e.printStackTrace();
             tx.rollback();
         } finally {
             em.close();
@@ -46,6 +47,5 @@ public class JpaMain {
 
         //삭제
         em.remove(member);
-
     }
 }

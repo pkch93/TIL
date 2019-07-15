@@ -67,14 +67,14 @@ public class JpaMainTest {
         try {
             member_수정();
             transaction.begin();
-
-            Member updatedMember = em.find(Member.class, "pkch93");
-
+            em.detach(member);
+            Member updatedMember = em.find(Member.class, "pkch");
+            em.remove(updatedMember);
             transaction.commit();
 
+            assertEquals(20, updatedMember.getAge());
             assertNotNull(updatedMember);
         } catch (Exception e) {
-            e.printStackTrace();
             transaction.rollback();
         }
     }
@@ -83,7 +83,6 @@ public class JpaMainTest {
         // given & when
         em.persist(member);
         Member foundMember = em.find(Member.class, "pkch");
-
         // then
         assertEquals(member, foundMember);
     }
@@ -95,10 +94,9 @@ public class JpaMainTest {
         member_생성_조회();
 
         Member foundMember = em.find(Member.class, "pkch");
-        foundMember.setId("pkch93");
+        foundMember.setAge(20);
 
         transaction.commit();
-        // TODO: 왜 commit 오류가 날까?
     }
 
     @AfterEach
