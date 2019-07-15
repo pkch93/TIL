@@ -18,3 +18,25 @@
 1. 다양한 HandlerMapping (RequestMappingHandlerMapping을 중심으로)
 
 [13일 학습내용 보기](Day13.md)
+
+## Day 14
+
+1. JPA
+
+    - JPA란?
+    - 환경 설정
+    - Basic
+
+[14일 학습내용 보기](Day14.md)
+
+## Day 15
+
+1. JPA
+
+    - 영속성 관리
+
+2. Spring
+
+    - 빈 등록과 @Autowired
+
+[15일 학습내용 보기](Day15.md)
