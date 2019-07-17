@@ -40,3 +40,11 @@
     - 빈 등록과 @Autowired
 
 [15일 학습내용 보기](Day15.md)
+
+## Day 17
+
+1. JPA
+
+    - Entity
+
+[17일 학습내용 보기](Day17.md)
