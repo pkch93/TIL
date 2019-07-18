@@ -83,4 +83,27 @@ JPA는 DB 스키마 자동 생성 기능을 제공한다. 클래스의 매핑 �
 - none
 
   자동 생성 기능을 사용하지 않음. 참고로 none은 실제로 없는 속성이다. 즉, 위 4개의 속성이 미리 정의된 속성이고 그외 속성은 자동 생성 기능을 제공하지 않는다.
-  
+
+※ 개발환경에 따른 HBM2DDL 추천전략
+
+- 개발 초기 단계에는 create 또는 update
+- 초기화 상태로 자동화된 테스트를 진행하는 개발자 환경과 CI 서버는 create니 create-drop
+- 테스트 서버는 update 또는 validate
+- 운영 서버는 validate 또는 none
+
+### 이름 매핑 전략
+
+JPA를 사용하는 언어 기반인 자바와 DB Column의 네이밍 컨벤션은 다르다. 보통 자바의 경우 field는 camelCase를 사용하지만 DB는 보통 언더스코어를 사용한다.
+
+이 때문에 위와 같이 자바와 DB의 네이밍 컨벤션을 지키면서 필드 / 컬럼 이름을 매핑하기 위해서는 `@Column`의 name을 일일이 바꿔줘야한다.
+
+```
+@Column(name = "role_type")
+private String roleType;
+```
+
+단, 모든 필드를 이렇게 바꿔주기는 매우 번거롭다. 이를 위해 `hibernate.ejb.naming_strategy`속성을 사용하면 이름 매핑 전략을 변경할 수 있다. 직접 네이밍 전략을 커스텀할 수도 있지만, `org.hibernate.cfg.ImprovedNamingStrategy` 클래스를 제공한다. 이 클래스는 테이블 명이나 컬럼 명이 생락되면 각각 camelCase와 언더스코어로 매핑한다.
+
+```xml
+<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
+```
