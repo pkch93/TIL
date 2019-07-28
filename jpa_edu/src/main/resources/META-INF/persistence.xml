@@ -2,7 +2,18 @@
     <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
 
         <persistence-unit name="jpaedu">
-            <class>edu.pkch.jpaedu.Member</class>
+            <class>edu.pkch.jpaedu.domain.User</class>
+            <class>edu.pkch.jpaedu.domain.Article</class>
+            <class>edu.pkch.jpaedu.domain.Comment</class>
+            <class>edu.pkch.jpaedu.advanced.superclass.Item</class>
+            <class>edu.pkch.jpaedu.advanced.superclass.Book</class>
+            <class>edu.pkch.jpaedu.advanced.superclass.Album</class>
+            <class>edu.pkch.jpaedu.advanced.superclass.Movie</class>
+            <class>edu.pkch.jpaedu.advanced.mapped_superclass.Member</class>
+            <class>edu.pkch.jpaedu.advanced.mapped_superclass.Seller</class>
+            <class>edu.pkch.jpaedu.advanced.mapped_superclass.Product</class>
+            <class>edu.pkch.jpaedu.advanced.identify.Parent</class>
+            <class>edu.pkch.jpaedu.advanced.identify.Child</class>
             <properties>
                 <!-- 필수 속성 -->
                 <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
@@ -21,7 +32,7 @@
                 <property name="hibernate.id.new_generator_mappings" value="true" />
                 <!-- JPA 표준에 맞게 새로운 키 생성 전략 사용 -->
 
-<!--                <property name="hibernate.hbm2ddl.auto" value="create" />-->
+                <property name="hibernate.hbm2ddl.auto" value="create" />
             </properties>
         </persistence-unit>
 

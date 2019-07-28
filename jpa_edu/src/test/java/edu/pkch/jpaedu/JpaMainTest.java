@@ -1,5 +1,6 @@
 package edu.pkch.jpaedu;
 
+import edu.pkch.jpaedu.domain.User;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,15 +16,15 @@ public class JpaMainTest {
 
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaedu");
     EntityManager em;
-    Member member;
+    User user;
 
     @BeforeEach
     void setUp() {
         em = emf.createEntityManager();
-        member = new Member();
-        member.setId("pkch");
-        member.setUsername("park");
-        member.setAge(27);
+        user = new User();
+        user.setId("pkch");
+        user.setUsername("park");
+        user.setAge(27);
 
     }
 
@@ -33,7 +34,7 @@ public class JpaMainTest {
         try {
             transaction.begin();
             member_생성_조회();
-            em.remove(member);
+            em.remove(user);
             transaction.commit();
         } catch (Exception e) {
 
@@ -47,14 +48,14 @@ public class JpaMainTest {
         try {
             transaction.begin();
             member_생성_조회();
-            member.setId("pkch93");
+            user.setId("pkch93");
 
-            Member foundMember = em.find(Member.class, "pkch93");
+            User foundUser = em.find(User.class, "pkch93");
 
-            em.remove(member);
+            em.remove(user);
             transaction.commit();
-            assertNotEquals(member, foundMember);
-            assertNull(foundMember);
+            assertNotEquals(user, foundUser);
+            assertNull(foundUser);
         } catch (Exception e) {
             transaction.rollback();
         }
@@ -67,13 +68,13 @@ public class JpaMainTest {
         try {
             member_수정();
             transaction.begin();
-            em.detach(member);
-            Member updatedMember = em.find(Member.class, "pkch");
-            em.remove(updatedMember);
+            em.detach(user);
+            User updatedUser = em.find(User.class, "pkch");
+            em.remove(updatedUser);
             transaction.commit();
 
-            assertEquals(20, updatedMember.getAge());
-            assertNotNull(updatedMember);
+            assertEquals(20, updatedUser.getAge());
+            assertNotNull(updatedUser);
         } catch (Exception e) {
             transaction.rollback();
         }
@@ -81,10 +82,10 @@ public class JpaMainTest {
 
     private void member_생성_조회() {
         // given & when
-        em.persist(member);
-        Member foundMember = em.find(Member.class, "pkch");
+        em.persist(user);
+        User foundUser = em.find(User.class, "pkch");
         // then
-        assertEquals(member, foundMember);
+        assertEquals(user, foundUser);
     }
 
     private void member_수정() {
@@ -93,8 +94,8 @@ public class JpaMainTest {
         transaction.begin();
         member_생성_조회();
 
-        Member foundMember = em.find(Member.class, "pkch");
-        foundMember.setAge(20);
+        User foundUser = em.find(User.class, "pkch");
+        foundUser.setAge(20);
 
         transaction.commit();
     }

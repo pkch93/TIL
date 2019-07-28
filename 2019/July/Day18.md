@@ -155,3 +155,6 @@ public class Member {
 식별자 자동생성의 기본값이다. 선택한 DB에 따라 `IDENTITY`, `SEQUENCE`, `TABLE` 전략 중 하나를 선택한다.
 
 이때, `SEQUENCE`나 `TABLE`전략이 선택되는 경우 미리 DB 시퀀스나 시퀀스용 테이블을 만들어놔야한다.
+
+# 연관관계 매핑
+
