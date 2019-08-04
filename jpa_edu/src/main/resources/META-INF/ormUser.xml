@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" version="2.1">
+    <named-query name="User.findByUsername">
+        <query><![CDATA[
+            SELECT u
+            FROM User u
+            WHERE u.username = :username
+        ]]></query>
+    </named-query>
+</entity-mappings>
