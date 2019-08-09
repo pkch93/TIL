@@ -15,7 +15,7 @@ public class LoggingAspect {
 
     private static final Logger log = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Pointcut("execution(* edu.pkch.mvcedu.controller.*.* (..))")
+    @Pointcut("execution(* edu.pkch.mvcedu.api.*.controller.*.* (..))")
     private void controllerPointcut() {
     }
 
