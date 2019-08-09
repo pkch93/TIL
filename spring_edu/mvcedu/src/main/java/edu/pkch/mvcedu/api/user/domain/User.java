@@ -15,7 +15,7 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private String name;
+    private String username;
 
     @Column(nullable = false)
     private int age;
@@ -23,10 +23,10 @@ public class User {
     public User() {
     }
 
-    public User(final String email, final String password, final String name, final int age) {
+    public User(final String email, final String password, final String username, final int age) {
         this.email = email;
         this.password = password;
-        this.name = name;
+        this.username = username;
         this.age = age;
     }
 
@@ -42,8 +42,8 @@ public class User {
         return password;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     public int getAge() {
