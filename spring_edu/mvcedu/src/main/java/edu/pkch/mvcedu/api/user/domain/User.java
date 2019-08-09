@@ -1,4 +1,4 @@
-package edu.pkch.mvcedu.domain;
+package edu.pkch.mvcedu.api.user.domain;
 
 import javax.persistence.*;
 
@@ -19,6 +19,16 @@ public class User {
 
     @Column(nullable = false)
     private int age;
+
+    public User() {
+    }
+
+    public User(final String email, final String password, final String name, final int age) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.age = age;
+    }
 
     public Long getId() {
         return id;
