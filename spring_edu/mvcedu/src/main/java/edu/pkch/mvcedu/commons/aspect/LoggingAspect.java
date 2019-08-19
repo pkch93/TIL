@@ -15,16 +15,16 @@ public class LoggingAspect {
 
     private static final Logger log = LoggerFactory.getLogger(LoggingAspect.class);
 
-    @Pointcut("execution(* edu.pkch.mvcedu.api.*.controller.*.* (..))")
+    @Pointcut("execution(* edu.pkch.mvcedu.domain.*.controller.*.* (..))")
     private void controllerPointcut() {
     }
 
     @Around("controllerPointcut()")
     private Object requestAndResponseLogging(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("request to {} with {}", joinPoint.getSignature(), joinPoint.getArgs());
-        ResponseEntity<String> result = null;
+        ResponseEntity result = null;
         try {
-            result = (ResponseEntity<String>) joinPoint.proceed();
+            result = (ResponseEntity) joinPoint.proceed();
             log.info("response code {}", result.getStatusCode());
             log.info("result {}", result);
         } catch (Exception ex) {

@@ -1,6 +1,7 @@
 package edu.pkch.jpaedu.domain;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "USER")
@@ -17,7 +18,7 @@ public class User {
     @Embedded
     private Address address;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "COMPANY_ID", foreignKey = @ForeignKey(name = "USER_TO_COMPANY_FK"))
     private Company company;
 
@@ -68,5 +69,19 @@ public class User {
 
     public void setCompany(final Company company) {
         this.company = company;
+        company.addWorker(this);
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final User user = (User) o;
+        return Objects.equals(username, user.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
     }
 }

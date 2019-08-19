@@ -24,13 +24,29 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-hateoas'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.h2database:h2'
     implementation 'org.modelmapper:modelmapper:2.3.0'
+
+    annotationProcessor 'org.hibernate:hibernate-jpamodelgen'
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation ('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'junit'
     }
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.2'
+}
+
+tasks.withType(JavaCompile) {
+    options.annotationProcessorGeneratedSourcesDirectory = file("src/generated/java")
+}
+
+
+sourceSets {
+    generated {
+        java {
+            srcDirs = ['src/generated/java']
+        }
+    }
 }

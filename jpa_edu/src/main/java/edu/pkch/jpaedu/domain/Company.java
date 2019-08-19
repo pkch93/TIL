@@ -1,8 +1,13 @@
 package edu.pkch.jpaedu.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+@NamedEntityGraph(name="Company.users", attributeNodes = {
+        @NamedAttributeNode("users")
+})
 @Entity
 public class Company {
     @Id
@@ -12,11 +17,19 @@ public class Company {
     @Column(name = "COMPANY_NAME")
     private String name;
 
+    @OneToMany
+    @JoinColumn(name = "USER_ID")
+    private List<User> users = new ArrayList<>();
+
     public Company() {
     }
 
     public Company(final String name) {
         this.name = name;
+    }
+
+    public void addWorker(User user) {
+        users.add(user);
     }
 
     public Long getId() {
@@ -25,6 +38,10 @@ public class Company {
 
     public String getName() {
         return name;
+    }
+
+    public List<User> getUsers() {
+        return users;
     }
 
     @Override

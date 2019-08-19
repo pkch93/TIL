@@ -1,6 +1,8 @@
-package edu.pkch.mvcedu.api.user.dto;
+package edu.pkch.mvcedu.domain.user.service.dto;
 
-public class UserMyPageDto {
+import org.springframework.hateoas.ResourceSupport;
+
+public class UserMyPageDto extends ResourceSupport {
     private String username;
     private String email;
     private int age;

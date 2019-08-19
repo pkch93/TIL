@@ -1,7 +1,7 @@
 package edu.pkch.mvcedu.controller;
 
-import edu.pkch.mvcedu.api.user.domain.User;
-import edu.pkch.mvcedu.api.user.repository.UserRepository;
+import edu.pkch.mvcedu.domain.user.domain.User;
+import edu.pkch.mvcedu.domain.user.domain.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,15 +13,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @Transactional
 @AutoConfigureMockMvc
-public class UserControllerTest {
+public class UserApiControllerTest {
 
-    private static final String TEST_URI = "/api/users/";
+    private static final String TEST_URI = "/users/";
     @Autowired
     private MockMvc mockMvc;
 
@@ -32,7 +32,8 @@ public class UserControllerTest {
 
     @BeforeEach
     void setUp() {
-        User user = new User("pkch@woowa.com", "qwerqwer", "pkch", 27);
+        User user = new User.Builder("pkch@woowa.com", "qwerqwer", "pkch", 27)
+                .build();
         testUser = userRepository.save(user);
     }
 
@@ -42,9 +43,7 @@ public class UserControllerTest {
         mockMvc.perform(get(TEST_URI + testUser.getId()))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.username").value(testUser.getUsername()))
-                .andExpect(jsonPath("$.email").value(testUser.getEmail()))
-                .andExpect(jsonPath("$.age").value(testUser.getAge()));
+                .andExpect(content().string(""));
     }
 
     @Test

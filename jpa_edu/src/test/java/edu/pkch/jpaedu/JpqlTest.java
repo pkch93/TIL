@@ -27,16 +27,23 @@ public class JpqlTest {
         user = new User("pkch", "park", 27);
         Address address = new Address("pohang", "samho-ro", "08707");
         company = new Company("woowabros");
-        user.setAddress(address);
-        user.setCompany(company);
         addEntity(company);
-        addEntity(user);
+        user.setAddress(address);
+        addUser(user, company);
     }
 
     private void addEntity(Object entity) {
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
         em.persist(entity);
+        transaction.commit();
+    }
+
+    private void addUser(User user, Company company) {
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
+        user.setCompany(company);
+        em.persist(user);
         transaction.commit();
     }
 
@@ -173,6 +180,25 @@ public class JpqlTest {
 
         assertEquals(user, result);
     }
+
+    @Test
+    @DisplayName("Company fetch join 테스트")
+    void queryByFetchJoin() {
+        TypedQuery<Company> query = em.createQuery("SELECT c FROM Company c join fetch c.users", Company.class);
+
+        query.getSingleResult();
+    }
+
+    @Test
+    @DisplayName("Company entityGraph 조회 테스트")
+    void queryByEntityGraph() {
+        TypedQuery<Company> query = em.createQuery("SELECT c FROM Company c", Company.class)
+                .setHint("javax.persistence.fetchgraph", em.getEntityGraph("Company.users"));
+
+        query.getSingleResult();
+    }
+
+
 
     @AfterEach
     void tearDown() {
