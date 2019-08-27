@@ -1,5 +1,6 @@
 plugins {
     id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id "org.asciidoctor.convert" version "1.5.3"
     id 'java'
 }
 
@@ -16,13 +17,16 @@ configurations {
     }
 }
 
+ext {
+    snippetsDir = file('build/generated-snippets')
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -32,21 +36,39 @@ dependencies {
     annotationProcessor 'org.hibernate:hibernate-jpamodelgen'
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    asciidoctor 'org.springframework.restdocs:spring-restdocs-asciidoctor:2.0.3.RELEASE'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc:2.0.3.RELEASE'
     testImplementation ('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'junit'
     }
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.2'
 }
 
+test {
+    outputs.dir snippetsDir
+}
+
+
+asciidoctor {
+    inputs.dir snippetsDir
+    dependsOn test
+}
+
 tasks.withType(JavaCompile) {
     options.annotationProcessorGeneratedSourcesDirectory = file("src/generated/java")
 }
-
 
 sourceSets {
     generated {
         java {
             srcDirs = ['src/generated/java']
         }
+    }
+}
+
+bootJar {
+    dependsOn asciidoctor
+    from ("${asciidoctor.outputDir}/html5") {
+        into 'static/docs'
     }
 }

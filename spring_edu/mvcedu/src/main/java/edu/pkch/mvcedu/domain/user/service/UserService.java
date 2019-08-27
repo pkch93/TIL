@@ -3,7 +3,7 @@ package edu.pkch.mvcedu.domain.user.service;
 import edu.pkch.mvcedu.domain.user.domain.User;
 import edu.pkch.mvcedu.domain.user.domain.repository.UserRepository;
 import edu.pkch.mvcedu.domain.user.exception.NotFoundUserException;
-import edu.pkch.mvcedu.domain.user.service.dto.UserMyPageDto;
+import edu.pkch.mvcedu.domain.user.service.dto.UserResponse;
 import edu.pkch.mvcedu.domain.user.service.dto.UserSignUpDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -22,11 +22,11 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public UserMyPageDto fetchUserBy(final Long userId) {
+    public UserResponse fetchUserBy(final Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(NotFoundUserException::new);
 
-        return modelMapper.map(user, UserMyPageDto.class);
+        return modelMapper.map(user, UserResponse.class);
     }
 
     public User signUp(final UserSignUpDto userSignUpDto) {

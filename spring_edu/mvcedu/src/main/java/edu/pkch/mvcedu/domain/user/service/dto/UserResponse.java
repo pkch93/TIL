@@ -2,15 +2,15 @@ package edu.pkch.mvcedu.domain.user.service.dto;
 
 import org.springframework.hateoas.ResourceSupport;
 
-public class UserMyPageDto extends ResourceSupport {
+public class UserResponse extends ResourceSupport {
     private String username;
     private String email;
     private int age;
 
-    public UserMyPageDto() {
+    public UserResponse() {
     }
 
-    public UserMyPageDto(final String username, final String email, final int age) {
+    public UserResponse(final String username, final String email, final int age) {
         this.username = username;
         this.email = email;
         this.age = age;
