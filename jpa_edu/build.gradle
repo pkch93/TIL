@@ -22,5 +22,7 @@ repositories {
 dependencies {
     implementation "org.hibernate:hibernate-entitymanager:${hibernateVersion}"
     implementation "com.h2database:h2:${h2dbVersion}"
+
+    runtimeOnly("mysql:mysql-connector-java:8.0.17")
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
 }
