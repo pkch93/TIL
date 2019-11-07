@@ -30,7 +30,7 @@ public class Article {
     /**
      * 외래키 매핑, 이를 통해 연결테이블 없이 외래키로만 매핑할 수 있다.
      */
-    @JoinColumn(name = "COMMENT_ID", foreignKey = @ForeignKey(name = "ARTICLE_COMMENT_FK"))
+    @JoinColumn(name = "ARTICLE_ID", foreignKey = @ForeignKey(name = "ARTICLE_COMMENT_FK"))
     private List<Comment> comments = new ArrayList<>();
 
 
@@ -41,6 +41,11 @@ public class Article {
         this.title = title;
         this.content = content;
         createdBy = new Date();
+    }
+
+    public Article(String title, String content, List<Comment> comments) {
+        this(title, content);
+        this.comments = comments;
     }
 
     public Long getId() {
@@ -57,5 +62,9 @@ public class Article {
 
     public Date getCreatedBy() {
         return createdBy;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
     }
 }

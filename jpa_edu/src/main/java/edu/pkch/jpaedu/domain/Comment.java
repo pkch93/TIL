@@ -11,6 +11,13 @@ public class Comment {
     private Long id;
     private String content;
 
+    public Comment() {
+    }
+
+    public Comment(String content) {
+        this.content = content;
+    }
+
     /**
      *  N : 1 다대일 매핑 (with Article)
      */
