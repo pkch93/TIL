@@ -1,4 +1,4 @@
-# 2018 12.22 Saturday
+# 2018 12.22 Saturday - Spring (Bed Request 처리), pandas (pivot table, merge, concat)
 
 - Spring Restful API
 

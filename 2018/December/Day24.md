@@ -1,4 +1,4 @@
-# 2018 12.24 Monday
+# 2018 12.24 Monday - Spring Securty Overview, pandas (결축치 처리, 이산값 처리, Feature Scaling)
 
 ## 1. Spring REST API
 

@@ -1,10 +1,8 @@
-# 2018 12.21 Friday
+# 2018 12.21 Friday - pandas groupby
 
 # 학습내용
 
-1. Spring Restful API
-
-2. 데이터 사이언스 by python
+1. 데이터 사이언스 by python
 
 - pandas groupby로 다양한 데이터 핸들링
 
