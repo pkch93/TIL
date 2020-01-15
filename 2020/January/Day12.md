@@ -1,4 +1,8 @@
-# 2020 01.12 Sunday - classicist vs mockist, Mockito
+# 2020 01.12 Sunday - classicist vs mockist
+
+### Table of Contents
+
+[classicist vs mockist](#classicist_vs_mockist)
 
 ## classicist vs mockist
 
@@ -35,4 +39,3 @@ mockist는 행위 중심으로 테스트를 바라본다. 따라서 객체 사�
 위와 같은 예시는 바로 Spring 프레임워크에서 자주 사용되는 Service 객체가 되겠다. Service 객체는 보통 Presentation 영역 (Controller 등)에서 전달 받은 사용자 입력값을 토대로 요청을 수행해준다. 이때 주로 로직은 도메인을 통해 수행한다. 따라서, Service의 메서드는 각 도메인 객체들이 잘 상호작용했는지 수행여부 등을 판단하는 것이 Service 객체에 알맞는 테스트라고 생각한다.
 
 Service 같은 Facade 역할을 하는 객체들에게는 Mock을 사용해도 나쁘지 않다는 생각이다. 오히려 의존 문제를 간소화하여 객체 간의 테스트를 보다 유연하게 하도록 도움을 준다는 것이 내 생각이다. 다만 Facade 역할이 아닌 상태 값을 다룬다면 Mocking을 하지 않는게 맞는 것 같다.
-
