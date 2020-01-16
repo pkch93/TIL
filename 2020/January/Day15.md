@@ -1,4 +1,4 @@
-# 20.01.15 Wendesday = Mockito
+# 20.01.15 Wendesday - Mockito mock, stubbing
 
 ### Table of Contents
 
@@ -79,5 +79,3 @@ void stub_basic() {
     assertThat(words.get(1)).isEqualTo(null);
 }
 ```
-
-### 
