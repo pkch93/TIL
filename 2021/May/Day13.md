@@ -1,4 +1,4 @@
-# React Native
+# 2021.05.13 TIL - React Native
 
 React Native는 React를 사용하여 IOS와 Android 모바일 애플리케이션을 개발할 수 있는 **하이브리드 앱** 프레임워크이다.
 
