@@ -6,4 +6,5 @@
 
 ## 12월 학습 내용 보기
 
-[12월 학습 내용](./December/README.md)
+[12월 학습 내용](december/)
+

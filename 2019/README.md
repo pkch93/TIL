@@ -18,13 +18,14 @@
 
 ## 2019년의 학습내용
 
-- [1월 학습내용](./January/README.md)
-- [2월 학습내용](./Febuary/README.md)
-- [3월 학습내용](./March/README.md)
-- [4월 학습내용](./April/README.md)
-- [5월 학습내용](./May/README.md)
-- [6월 학습내용](./June/README.md)
-- [7월 학습내용](./July/README.md)
-- [11월 학습내용](./November/README.md)
+* [1월 학습내용](january/)
+* [2월 학습내용](febuary/)
+* [3월 학습내용](march.md)
+* [4월 학습내용](april/)
+* [5월 학습내용](may/)
+* [6월 학습내용](june/)
+* [7월 학습내용](july/)
+* [11월 학습내용](https://github.com/pkch93/TIL/tree/f886e7c4181bb3204d87774d5f28e444656aaf23/2019/November/README.md)
 
 보다시피 빠진 월도 많고 중간에 작성하지 못한 날도 많다.... 이를 반성하면서 하나씩 채워나가야겠다..
+
