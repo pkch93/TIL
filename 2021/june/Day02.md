@@ -53,6 +53,57 @@ void integerAutoParams(int x, int y) {
 
 위와 같이 테스트 메서드에 `@AutoSource`를 사용하여 int 값을 자동으로 주입받을 수 있다. 위 타입들은 위와 같이 사용가능하다.
 
+참고로 int와 Integer의 경우는 `javax.validation.constraints.Max`와 `javax.validation.constraints.Min`으로 생성되는 값의 최대 최소 값을 설정할 수 있다.
+
+```java
+@ParameterizedTest
+@AutoSource
+void integerAutoParamsWithMinMax(@Min(1) @Max(10) int x) {
+    assertThat(x >= 1).isTrue();
+    assertThat(x <= 10).isTrue();
+
+    System.out.println(String.format("x: %d", x));
+}
+```
+
+그밖에 `junit-jupiter-params`에서 지원하는 `@ValueSource`나 `@CsvSource`도 각각 `@ValueAutoSource`와 `@CsvAutoSource`로 지원한다.
+
+```java
+@ParameterizedTest
+@CsvAutoSource({"16, foo"})
+void testMethod(int arg1, String arg2, String arg3) {
+    assertEquals(16, arg1);
+    assertEquals("foo", arg2);
+    assertNotEquals(arg2, arg3);
+}
+
+class ValueContainer {
+
+    private final String value;
+
+    public ValueContainer(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+}
+
+@ParameterizedTest
+@ValueAutoSource(strings = {"foo"})
+void testMethod(@Fixed String arg1, String arg2, ValueContainer arg3) {
+    assertEquals("foo", arg2);
+    assertEquals("foo", arg3.getValue());
+}
+```
+
+`@Fixed`는 `@Fixed`가 붙은 파라미터가 이후에 나타나는 파라미터의 값을 고정시킨다. 만약 중간에 타입이 달라지거나 `@Fixed`가 붙은 파라미터 이전의 인자들은 값을 고정시키지 않는다.
+
+위 예시에서는 ValueContainer의 value가 String이므로 이 값이 `foo`로 고정된다.
+
+
 ### 참고
 
 AutoParams github: [https://github.com/JavaUnit/AutoParams](https://github.com/JavaUnit/AutoParams)
