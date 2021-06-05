@@ -1,0 +1,22 @@
+# June
+
+- [June](#june)
+  - [목표](#목표)
+  - [2021년 6월의 TIL](#2021년-6월의-til)
+    - [6월 1째주 `06.01 ~ 06.06`](#6월-1째주-0601--0606)
+
+## 목표
+
+6월달은 자바 카페 공개스터디 중 하나인 AWS SAA에 참여하고 있다.
+
+따라서 SAA 자격 시험 대비 스터디를 진행할 예정이다.
+
+그 밖에 desserts 사이드 프로젝트하면서 추가로 학습하는 내용을 정리할 예정이다.
+
+## 2021년 6월의 TIL
+
+### 6월 1째주 `06.01 ~ 06.06`
+
+* [Day 02 - AutoParams](day02.md)
+* [Day 03 - AutoParams Customization](day03.md)
+* [Day 04 - Spring Boot Profile Config](day04.md)
