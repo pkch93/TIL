@@ -115,6 +115,8 @@
     * [2021.05.22 TIL - React Native android에서 이미지 깨지는 이슈](2021/may/day22.md)
     * [2021.05.25 TIL - React Native Dynamic Image 에러 처리](2021/may/day25.md)
     * [2021.05.26 TIL - React Native Navigation](2021/may/day26.md)
+    * [2021.05.30 TIL - AWS S3](2021/may/day30.md)
+    * [2021.05.31 TIL - 아마존 글래이셔](2021/may/day31.md)
   * [June](2021/june/README.md)
     * [2021.06.02 TIL - AutoParams](2021/june/Day02.md)
     * [2021.06.03 TIL - AutoParams Customization](2021/june/Day03.md)
