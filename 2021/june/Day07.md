@@ -1,6 +1,16 @@
 # 2021.06.07 TIL - AWS EBS, AWS EFS
 
-# AWS EBS `아마존 일래스틱 블록 스토어`
+- [2021.06.07 TIL - AWS EBS, AWS EFS](#20210607-til---aws-ebs-aws-efs)
+  - [AWS EBS `아마존 일래스틱 블록 스토어`](#aws-ebs-아마존-일래스틱-블록-스토어)
+    - [EBS의 특징](#ebs의-특징)
+    - [EBS의 주요 서비스](#ebs의-주요-서비스)
+      - [볼륨 유형](#볼륨-유형)
+  - [AWS EFS `아마존 일래스틱 파일 시스템`](#aws-efs-아마존-일래스틱-파일-시스템)
+    - [EFS의 특징](#efs의-특징)
+    - [EFS의 구현 토대](#efs의-구현-토대)
+    - [AWS EFS 성능 모델](#aws-efs-성능-모델)
+
+## AWS EBS `아마존 일래스틱 블록 스토어`
 
 AWS EBS는 EC2 인스턴스를 위한 영구 스토리지 기능을 수행한다. 영구 스토리지는 EC2 인스턴스의 수명주기를 넘어서서 존재할 수 있는 스토리지라는 의미이며 신뢰성 높은 블록 레벨의 스토리지를 제공한다.
 
@@ -16,7 +26,7 @@ AWS EBS는 볼륨에 대한 특정 시점의 스냅샷을 지속적으로 작성
 
 EBS는 EC2 콘솔에서 확인할 수 있다.
 
-## EBS의 특징
+### EBS의 특징
 
 - 영구 스토리지
 
@@ -46,7 +56,7 @@ EBS는 EC2 콘솔에서 확인할 수 있다.
 
     아마존 EBS의 연간 실패율 `AFR`은 0.1%에서 0.2%에 불과하다.
 
-## EBS의 주요 서비스
+### EBS의 주요 서비스
 
 AWS EBS는 세가지 타입 `인스턴스 스토어, SSD 타입, HDD 타입`의 블록 스토리지 서비스를 제공한다.
 
@@ -62,7 +72,7 @@ AWS EBS는 세가지 타입 `인스턴스 스토어, SSD 타입, HDD 타입`의 
 
     일레스틱 볼륨은 AWS EBS의 특징 중 하나로 용량 증대, 성능 튜닝, 성능 저하 없이 기존의 볼륨을 변경할 수 있도록 한다.
 
-### 볼륨 유형
+#### 볼륨 유형
 
 - 범용 SSD(gp2)
 
@@ -137,7 +147,7 @@ IOPS vs throughput: [https://stackoverflow.com/questions/15759571/iops-versus-th
 볼륨 유형 참고: [https://aws.amazon.com/ko/ebs/volume-types/](https://aws.amazon.com/ko/ebs/volume-types/)
 EBS 성능 향상: [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSPerformance.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSPerformance.html)
 
-# AWS EFS `아마존 일래스틱 파일 시스템`
+## AWS EFS `아마존 일래스틱 파일 시스템`
 
 EFS console: [https://ap-northeast-2.console.aws.amazon.com/efs/home?region=ap-northeast-2#/get-started](https://ap-northeast-2.console.aws.amazon.com/efs/home?region=ap-northeast-2#/get-started)
 
@@ -153,7 +163,7 @@ EFS는 유전자 분석, 빅데이터 분석, 웹 서비스, 웹사이트 디렉
 
 Amazon EFS Infrequent Access 참고: [https://aws.amazon.com/ko/efs/features/infrequent-access/?&trk=el_a131L0000057zi2QAA&trkCampaign=CSI_Q2_2019_Storage_BizApps_EFS-IA_LP&sc_channel=el&sc_campaign=CSI_08_2019_Storage_EFS_Console&sc_outcome=CSI_Digital_Marketing](https://aws.amazon.com/ko/efs/features/infrequent-access/?&trk=el_a131L0000057zi2QAA&trkCampaign=CSI_Q2_2019_Storage_BizApps_EFS-IA_LP&sc_channel=el&sc_campaign=CSI_08_2019_Storage_EFS_Console&sc_outcome=CSI_Digital_Marketing)
 
-## EFS의 특징
+### EFS의 특징
 
 - 완전관리형
 
@@ -183,7 +193,7 @@ Amazon EFS Infrequent Access 참고: [https://aws.amazon.com/ko/efs/features/inf
 
     EFS의 데이터는 리전 내 다수의 AZ에 자동으로 복제된다. 이를 통해 고가용성, 다중 AZ 접근성, 데이터 손실로부터의 보호를 통한 고신뢰성을 제공한다.
 
-## EFS의 구현 토대
+### EFS의 구현 토대
 
 EFS는 고가용성과 고신뢰성을 기반으로 간편성, 민첩성, 확장성을 구현한 파일 시스템이다. 데이터는 자동으로 다수의 AZ에 복제되고 일부 AZ와 연결이 중단되도 문제가 없도록 설계되어있다. 이와 같이 다수 AZ를 통한 데이터 보호 철학은 NAS에 비해 우수하다.
 
@@ -201,7 +211,7 @@ EFS는 고가용성과 고신뢰성을 기반으로 간편성, 민첩성, 확장
 
     파일 시스템의 크기에 따라 처리성능과 IOPS가 자동으로 조절된다. 페타바이트 규모로 성장하더라도 리프로비전, 성능 요소 재설정 등을 신경쓸 필요가 없다.
 
-## AWS EFS 성능 모델
+### AWS EFS 성능 모델
 
 AWS EFS의 기본적인 성능 모델은 **범용성 모델**로 처리지연에 민감한 애플리케이션, 범용의 파일 기반 워크로드에 적합하며, 기타 다양한 목적으로 활용될 수 있다.
 
