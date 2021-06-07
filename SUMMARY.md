@@ -119,3 +119,5 @@
     * [2021.06.02 TIL - AutoParams](2021/june/Day02.md)
     * [2021.06.03 TIL - AutoParams Customization](2021/june/Day03.md)
     * [2021.06.04 TIL - Spring Boot Profile Config](2021/june/Day04.md)
+    * [2021.06.05 TIL - AWS S3 관련 보충](2021/june/day05.md)
+    * [2021.06.06 TIL - React Native App Icon 반영](2021/june/day06.md)

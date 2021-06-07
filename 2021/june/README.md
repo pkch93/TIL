@@ -4,6 +4,7 @@
   - [목표](#목표)
   - [2021년 6월의 TIL](#2021년-6월의-til)
     - [6월 1째주 `06.01 ~ 06.06`](#6월-1째주-0601--0606)
+    - [6월 2째주 `06.07 ~ 06.13`](#6월-2째주-0607--0613)
 
 ## 목표
 
@@ -20,3 +21,7 @@
 * [Day 02 - AutoParams](day02.md)
 * [Day 03 - AutoParams Customization](day03.md)
 * [Day 04 - Spring Boot Profile Config](day04.md)
+* [Day 05 - AWS S3 관련 보충](day05.md)
+* [Day 06 - React Native App Icon 반영](day06.md)
+
+### 6월 2째주 `06.07 ~ 06.13`
