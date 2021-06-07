@@ -25,3 +25,5 @@
 * [Day 06 - React Native App Icon 반영](day06.md)
 
 ### 6월 2째주 `06.07 ~ 06.13`
+
+* [Day 07 - AWS EBS, AWS EFS](day07.md)
