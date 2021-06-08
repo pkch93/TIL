@@ -32,6 +32,8 @@ import LinearGradient from 'react-native-linear-gradient'
 </LinearGradient>
 ```
 
+![](https://user-images.githubusercontent.com/30178507/121198058-cb8ede00-c8ac-11eb-9f5b-cfbe1bf45a29.png)
+
 위와 같이 `hello world!` 텍스트에 노란색 형광펜 효과를 linear-gradient로 구현하고 싶다면 위와 같이 구현할 수 있다.
 
 colors에 linear-gradient를 어떤 색상으로 적용할 것인지 배열 형태로 제공할 수 있다. `rgba` 형태 뿐만 아니라 `Hex` 형태로도 제공할 수 있다.
