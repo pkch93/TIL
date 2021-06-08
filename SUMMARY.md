@@ -124,3 +124,4 @@
     * [2021.06.05 TIL - AWS S3 관련 보충](2021/june/Day05.md)
     * [2021.06.06 TIL - React Native App Icon 반영](2021/june/Day06.md)
     * [2021.06.07 TIL - AWS EBS, AWS EFS](2021/june/Day07.md)
+    * [2021.06.08 TIL - React Native Linear Gradient](2021/june/day08.md)

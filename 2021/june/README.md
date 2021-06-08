@@ -27,3 +27,4 @@
 ### 6월 2째주 `06.07 ~ 06.13`
 
 * [Day 07 - AWS EBS, AWS EFS](day07.md)
+* [Day 08 - React Native Linear Gradient](day08.md)
