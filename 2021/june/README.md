@@ -28,3 +28,4 @@
 
 * [Day 07 - AWS EBS, AWS EFS](day07.md)
 * [Day 08 - React Native Linear Gradient](day08.md)
+* [Day 10 - Amazon VPC 기본](day10.md)
