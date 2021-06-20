@@ -126,3 +126,10 @@
     * [2021.06.07 TIL - AWS EBS, AWS EFS](2021/june/Day07.md)
     * [2021.06.08 TIL - React Native Linear Gradient](2021/june/day08.md)
     * [2021.06.10 TIL - Amazon VPC 기본](2021/june/day10.md)
+    * [2021.06.14 TIL - Amazon VPC](2021/june/day14.md)
+    * [2021.06.15 TIL - VPC 피어링](2021/june/day15.md)
+    * [2021.06.16 TIL - DHCP](2021/june/day16.md)
+    * [2021.06.17 TIL - VPC 엔드포인트](2021/june/day17.md)
+    * [2021.06.19 TIL - EC2 인스턴스 타입](2021/june/day19.md)
+    * [2021.06.20 TIL - EC2 인스턴스의 주요 특징](2021/june/day20.md)
+  

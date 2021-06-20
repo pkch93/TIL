@@ -5,6 +5,7 @@
   - [2021년 6월의 TIL](#2021년-6월의-til)
     - [6월 1째주 `06.01 ~ 06.06`](#6월-1째주-0601--0606)
     - [6월 2째주 `06.07 ~ 06.13`](#6월-2째주-0607--0613)
+    - [6월 3째주 `06.14 ~ 06.20`](#6월-3째주-0614--0620)
 
 ## 목표
 
@@ -29,3 +30,12 @@
 * [Day 07 - AWS EBS, AWS EFS](day07.md)
 * [Day 08 - React Native Linear Gradient](day08.md)
 * [Day 10 - Amazon VPC 기본](day10.md)
+
+### 6월 3째주 `06.14 ~ 06.20`
+
+* [Day 14 - Amazon VPC](day14.md)
+* [Day 15 - VPC 피어링](day15.md)
+* [Day 16 - DHCP](day16.md)
+* [Day 17 - VPC 엔드포인트](day17.md)
+* [Day 19 - EC2 인스턴스 타입](day19.md)
+* [Day 20 - EC2 인스턴스의 주요 특징](day20.md)
