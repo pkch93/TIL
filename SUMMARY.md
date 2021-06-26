@@ -132,4 +132,6 @@
     * [2021.06.17 TIL - VPC 엔드포인트](2021/june/day17.md)
     * [2021.06.19 TIL - EC2 인스턴스 타입](2021/june/day19.md)
     * [2021.06.20 TIL - EC2 인스턴스의 주요 특징](2021/june/day20.md)
+    * [2021.06.21 TIL - AMI](2021/june/day21.md)
+    * [2021.06.22 TIL - AMI 가상화](2021/june/day22.md)
   
