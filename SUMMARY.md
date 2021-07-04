@@ -134,4 +134,6 @@
     * [2021.06.20 TIL - EC2 인스턴스의 주요 특징](2021/june/day20.md)
     * [2021.06.21 TIL - AMI](2021/june/day21.md)
     * [2021.06.22 TIL - AMI 가상화](2021/june/day22.md)
-  
+    * [2021.06.29 TIL - IAM](2021/june/day29.md)
+  * [July](2021/july/README.md)
+    * [2021.07.03 TIL - IAM 자격 증명](2021/july/Day03.md)
