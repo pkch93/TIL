@@ -137,3 +137,4 @@
     * [2021.06.29 TIL - IAM](2021/june/day29.md)
   * [July](2021/july/README.md)
     * [2021.07.03 TIL - IAM 자격 증명](2021/july/Day03.md)
+    * [2021.07.06 TIL - AWS Auto Scaling](2021/july/Day06.md)
