@@ -138,3 +138,6 @@
   * [July](2021/july/README.md)
     * [2021.07.03 TIL - IAM 자격 증명](2021/july/Day03.md)
     * [2021.07.06 TIL - AWS Auto Scaling](2021/july/Day06.md)
+    * [2021.07.07 TIL - Auto Scaling 동적 조정 정책](2021/july/day07.md)
+    * [2021.07.08 TIL - ELB와 대상 그룹](2021/july/day08.md)
+    * [2021.07.09 TIL - ELB와 Target Group 사용해보기](2021/july/day09.md)
