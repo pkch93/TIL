@@ -141,3 +141,4 @@
     * [2021.07.07 TIL - Auto Scaling 동적 조정 정책](2021/july/day07.md)
     * [2021.07.08 TIL - ELB와 대상 그룹](2021/july/day08.md)
     * [2021.07.09 TIL - ELB와 Target Group 사용해보기](2021/july/day09.md)
+    * [2021.07.11 TIL - MVCC](2021/july/day11.md)

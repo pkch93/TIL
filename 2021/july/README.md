@@ -24,3 +24,4 @@
 * [Day 07 - Auto Scaling 동적 조정 정책](day07.md)
 * [Day 08 - ELB와 대상 그룹](day08.md)
 * [Day 09 - ELB와 Target Group 사용해보기](day09.md)
+* [Day 11 - MVCC](day11.md)
