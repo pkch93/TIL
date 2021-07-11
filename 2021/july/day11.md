@@ -1,5 +1,9 @@
 # 2021.07.11 TIL - MVCC
 
+- [2021.07.11 TIL - MVCC](#20210711-til---mvcc)
+  - [MySQL의 MVCC 동작 방식](#mysql의-mvcc-동작-방식)
+  - [참고](#참고)
+
 MVCC `Multi Version Concurrency Control`란 락을 걸지 않고 읽기 작업을 수행할 수 있도록 만드는 원천 기능이다. MySQL에서는 InnoDB 스토리지 엔진부터 MVCC를 지원한다. 
 
 > MVCC는 Oracle DB에서 지원하던 기능인데 이를 InnoDB에서 차용하여 구현되었다.
@@ -8,7 +12,7 @@ MVCC는 일반적으로 레코드 레벨의 트랜잭션을 지원하는 DBMS가
 
 > 멀티 버전 `Multi Version` 이란 하나의 레코드에 대해 여러 개의 버전이 동시에 관리된다는 의미이다.
 
-# MySQL의 MVCC 동작 방식
+## MySQL의 MVCC 동작 방식
 
 다음과 같이 member 테이블에 insert 문으로 아래와 같이 로우를 저장한다고 가정한다. 이때 DB의 트랜잭션 격리수준은 `READ_COMMITED`로 가정한다.
 
@@ -34,6 +38,6 @@ MVCC는 일반적으로 레코드 레벨의 트랜잭션을 지원하는 DBMS가
 
 이 상태에서 Commit을 하면 InnoDB는 그대로 영구적인 데이터로 만든다. 커밋된다고 Undo 로그를 바로 삭제하는 것이 아니라 Undo 로그를 필요로하는 트랜잭션이 없을 때 삭제한다. 반면 Rollback을 하게되면 Undo에 백업된 데이터를 다시 InnoDB 버퍼 풀로 복구하고 Undo 로그에 추가했던 데이터를 삭제한다.
 
-# 참고
+## 참고
 
 Real MySQL 3.2.6: [http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788992939003](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788992939003)
