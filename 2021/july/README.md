@@ -5,6 +5,8 @@
   - [2021년 7월의 TIL](#2021년-7월의-til)
     - [7월 1째주 `07.01 ~ 07.04`](#7월-1째주-0701--0704)
     - [7월 2째주 `07.05 ~ 07.11`](#7월-2째주-0705--0711)
+    - [7월 3째주 `07.12 ~ 07.19`](#7월-3째주-0712--0719)
+    - [7월 4째주 `07.20 ~ 07.26`](#7월-4째주-0720--0726)
 
 ## 목표
 
@@ -25,3 +27,16 @@
 * [Day 08 - ELB와 대상 그룹](day08.md)
 * [Day 09 - ELB와 Target Group 사용해보기](day09.md)
 * [Day 11 - MVCC](day11.md)
+
+### 7월 3째주 `07.12 ~ 07.19`
+
+* [Day 14 - AWS Lambda, AWS API Gateway](day14.md)
+* [Day 19 - Amazon CloudFront](day19.md)
+
+### 7월 4째주 `07.20 ~ 07.26`
+
+* [Day 20 - Amazon Route 53](day20.md)
+* [Day 21 - AWS SQS, Amazon SNS](day21.md)
+* [Day 22 - AWS RDS](day22.md)
+* [Day 23 - Amazon Aurora](day23.md)
+* [Day 24 - Amazon Redshift](day24.md)
