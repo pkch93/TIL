@@ -149,3 +149,6 @@
     * [2021.07.22 TIL - AWS RDS](2021/july/day22.md)
     * [2021.07.23 TIL - Amazon Aurora](2021/july/day23.md)
     * [2021.07.24 TIL - Amazon Redshift](2021/july/day24.md)
+    * [2021.07.26 TIL - Spring Bean vs static](2021/july/day26.md)
+    * [2021.07.27 TIL - java-test-fixture overview](2021/july/day27.md)
+    * [2021.07.28 TIL - Amazon FSx](2021/july/day28.md)

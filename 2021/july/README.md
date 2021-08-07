@@ -7,6 +7,7 @@
     - [7월 2째주 `07.05 ~ 07.11`](#7월-2째주-0705--0711)
     - [7월 3째주 `07.12 ~ 07.19`](#7월-3째주-0712--0719)
     - [7월 4째주 `07.20 ~ 07.26`](#7월-4째주-0720--0726)
+    - [7월 5째주 `7.27 ~ 7.31`](#7월-5째주-727--731)
 
 ## 목표
 
@@ -40,3 +41,9 @@
 * [Day 22 - AWS RDS](day22.md)
 * [Day 23 - Amazon Aurora](day23.md)
 * [Day 24 - Amazon Redshift](day24.md)
+* [Day 26 - Spring Bean vs static](day26.md)
+
+### 7월 5째주 `7.27 ~ 7.31`
+
+* [Day 27 - java-test-fixture overview](day27.md)
+* [Day 28 - Amazon FSx](day28.md)
