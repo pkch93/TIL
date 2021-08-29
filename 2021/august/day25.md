@@ -1,5 +1,13 @@
 # 2021.08.25 TIL - JpaAutoConfiguration
 
+- [2021.08.25 TIL - JpaAutoConfiguration](#20210825-til---jpaautoconfiguration)
+  - [DataSourceAutoConfiguration](#datasourceautoconfiguration)
+  - [HibernateJpaAutoConfiguration](#hibernatejpaautoconfiguration)
+    - [LocalContainerEntityManagerFactoryBean](#localcontainerentitymanagerfactorybean)
+    - [LocalContainerEntityManagerFactoryBean를 직접 정의할 때 참고](#localcontainerentitymanagerfactorybean를-직접-정의할-때-참고)
+      - [JpaProperties는 적용된다](#jpaproperties는-적용된다)
+    - [JpaTransactionManager](#jpatransactionmanager)
+
 아래 순서대로 스프링 환경에서 JPA를 사용하기 위한 설정을 한다.
 
 1. DataSourceAutoConfiguration
