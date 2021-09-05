@@ -166,3 +166,8 @@
     * [2021.08.26 TIL - Spring Batch Transaction](2021/august/day26.md)
     * [2021.08.27 TIL - Spring Multiple DataSource with JPA](2021/august/day27.md)
     * [2021.08.29 TIL - Spring FactoryBean](2021/august/day29.md)
+    * [2021.08.30 TIL - Spring MultiDataSource 환경에서 QuerydslRepositorySupport](2021/august/day30.md)
+    * [2021.08.31 TIL - Spring ObjectProvider](2021/august/day31.md)
+  * [September](2021/september/README.md)
+    * [2021.09.04 TIL - Spring WebSocket with STOMP (broker)](2021/september/day04.md)
+    * [2021.09.05 TIL - Spring WebSocket with STOMP (Annotated Controllers)](2021/september/day05.md)
