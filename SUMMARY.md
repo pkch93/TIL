@@ -175,3 +175,6 @@
     * [2021.09.19 TIL - BeanFactory와 ApplicationContext](2021/september/day19.md)
     * [2021.09.20 TIL - @Configuration](2021/september/day20.md)
     * [2021.09.22 TIL - Spring vs Spring Boot](2021/september/day22.md)
+  * [October](2021/october/README.md)
+    * [2021.10.01 TIL - Mockito ArgumentCaptor](2021/october/day01.md)
+    * [2021.10.02 TIL - Amazon SNS 메세지 필터 정책과 원시 메세지 전송 활성화](2021/october/day02.md)
