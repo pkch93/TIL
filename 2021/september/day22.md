@@ -1,6 +1,6 @@
-# Spring vs Spring Boot
+# 2021.09.22 TIL - Spring vs Spring Boot
 
-- [Spring vs Spring Boot](#spring-vs-spring-boot)
+- [2021.09.22 TIL - Spring vs Spring Boot](#20210922-til---spring-vs-spring-boot)
   - [Spring Boot](#spring-boot)
     - [build.gradle](#buildgradle)
     - [애플리케이션 설정](#애플리케이션-설정)

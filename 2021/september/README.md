@@ -4,6 +4,9 @@
   - [목표](#목표)
   - [2021년 9월의 TIL](#2021년-9월의-til)
     - [9월 1째주 `21.09.01 ~ 21.09.05`](#9월-1째주-210901--210905)
+    - [9월 2째주 `21.09.06 ~ 21.09.12`](#9월-2째주-210906--210912)
+    - [9월 3째주 `21.09.13 ~ 21.09.19`](#9월-3째주-210913--210919)
+    - [9월 4째주 `21.09.20 ~ 21.09.26`](#9월-4째주-210920--210926)
 
 ## 목표
 
@@ -19,3 +22,16 @@ WebSocket과 함께 [Spring 핵심 원리 기본편](https://www.inflearn.com/co
 
 * [Day 04 - Spring WebSocket with STOMP (broker)](day04.md)
 * [Day 05 - Spring WebSocket with STOMP (Annotated Controllers)](day05.md)
+
+### 9월 2째주 `21.09.06 ~ 21.09.12`
+
+* [Day 12 - SockJS](day12.md)
+
+### 9월 3째주 `21.09.13 ~ 21.09.19`
+
+* [Day 19 - BeanFactory와 ApplicationContext](day19.md)
+
+### 9월 4째주 `21.09.20 ~ 21.09.26`
+
+* [Day 20 - @Configuration](day20.md)
+* [Day 22 - Spring vs Spring Boot](day22.md)
