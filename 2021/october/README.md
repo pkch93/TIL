@@ -15,3 +15,4 @@
 ### 10월 2째주 `2021.10.04 ~ 2021.10.10`
 
 * [Day 05 - WebClient DataBufferLimitException](day05.md)
+* [Day 10 - Redis Pub/Sub](day10.md)
