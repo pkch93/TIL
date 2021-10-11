@@ -179,3 +179,4 @@
     * [2021.10.01 TIL - Mockito ArgumentCaptor](2021/october/day01.md)
     * [2021.10.02 TIL - Amazon SNS 메세지 필터 정책과 원시 메세지 전송 활성화](2021/october/day02.md)
     * [2021.10.10 TIL - Redis Pub/Sub](2021/october/day10.md)
+    * [2021.10.11 TIL - Spring Data Redis PubSub](2021/october/day11.md)
