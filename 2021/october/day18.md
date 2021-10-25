@@ -1,5 +1,12 @@
 # 2021.10.18 TIL - effective typescript item 2. 타입스크립트 설정 이해하기
 
+- [2021.10.18 TIL - effective typescript item 2. 타입스크립트 설정 이해하기](#20211018-til---effective-typescript-item-2-타입스크립트-설정-이해하기)
+  - [tsconfig](#tsconfig)
+    - [noImplicitAny](#noimplicitany)
+    - [strictNullChecks](#strictnullchecks)
+    - [strict](#strict)
+  - [참고](#참고)
+
 ## tsconfig
 
 타입스크립트 컴파일러에는 무수히 많은 설정을 할 수 있다. `noImplicitAny`, `baseUrl`, `strictNullChecks` 등의 설정이 존재하는데 컴파일시 커멘드라인 옵션으로 제공하거나 타입스크립트 설정 파일인 `tsconfig.json`에 설정을 통해 사용할 수 있다.
@@ -162,6 +169,9 @@ tsconfig에서 `strict` 옵션을 통해 대부분의 오류를 잡을 수 있�
 ## 참고
 
 이펙티브 타입스크립트 (댄 밴더캄 저, 장원호 역) item 2: [http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966263134](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966263134)
+
 What is a tsconfig.json: [https://www.typescriptlang.org/docs/handbook/tsconfig-json.html](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+
 strict-mode-typescript: [https://dev.to/jsdev/strict-mode-typescript-j8p](https://dev.to/jsdev/strict-mode-typescript-j8p)
+
 Typescript의 공변과 반공변: [https://iamssen.medium.com/typescript-에서의-공변성과-반공변성-strictfunctiontypes-a82400e67f2](https://iamssen.medium.com/typescript-%EC%97%90%EC%84%9C%EC%9D%98-%EA%B3%B5%EB%B3%80%EC%84%B1%EA%B3%BC-%EB%B0%98%EA%B3%B5%EB%B3%80%EC%84%B1-strictfunctiontypes-a82400e67f2)
