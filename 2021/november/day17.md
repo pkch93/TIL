@@ -1,7 +1,5 @@
-# Internet Protocol
-
-    - [Internet Protocol](#internet-protocol)
-- [Internet Protocol](#internet-protocol)
+# 2021.11.17 TIL - Internet Protocol
+- [2021.11.17 TIL - Internet Protocol](#20211117-til---internet-protocol)
   - [Internet Protocol의 역할](#internet-protocol의-역할)
   - [Internet Protocol의 한계](#internet-protocol의-한계)
     - [비연결성](#비연결성)
