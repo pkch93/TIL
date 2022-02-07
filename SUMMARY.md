@@ -204,4 +204,5 @@
     * [Day 29 - Decorator Pattern](2022/january/day29.md)
     * [Day 30 - Facade Pattern](2022/january/day30.md)
   * [February](2022/february/README.md)
-    * [Day 02 - Flyweight Pattern](day02.md)
+    * [Day 02 - Flyweight Pattern](2022/february/day02.md)
+    * [Day 07 - Flyweight Pattern](2022/february/day07.md)
