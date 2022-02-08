@@ -14,3 +14,4 @@
 ### 2월 둘째주 `02.06 ~ 02.12`
 
 * [Day 07 - Iterator Pattern](day07.md)
+* [Day 08 - Command Pattern](day08.md)

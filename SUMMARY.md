@@ -206,3 +206,4 @@
   * [February](2022/february/README.md)
     * [Day 02 - Flyweight Pattern](2022/february/day02.md)
     * [Day 07 - Flyweight Pattern](2022/february/day07.md)
+    * [Day 08 - Command Pattern](2022/february/day08.md)
